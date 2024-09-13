@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Global/Backend/Loader/Main Menu/Menu.tres" type="Theme" id=1]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/MainMenuFontOveridetres.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Global/GameLevels/AntonyR/ForegroundTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/PlayButton.gd" type="Script" id=5]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/QuitButton.gd" type="Script" id=6]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/DebugButton.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Global/Backend/Interface/Monocraft.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = SubResource( 2 )
+
+[node name="rootNode" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 256, 150 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1, 0 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131083, 0, 0, 131087, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131095, 0, 0, 131098, 0, 0, 196610, 0, 0, 196615, 0, 0, 196617, 0, 0, 196619, 0, 0, 196620, 0, 0, 196622, 0, 0, 196623, 0, 0, 196625, 0, 0, 196631, 0, 0, 196634, 0, 0, 262146, 0, 0, 262151, 0, 0, 262153, 0, 0, 262155, 0, 0, 262157, 0, 0, 262159, 0, 0, 262161, 0, 0, 327682, 0, 0, 327684, 0, 0, 327685, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327691, 0, 0, 327695, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 393218, 0, 0, 393221, 0, 0, 393223, 0, 0, 393225, 0, 0, 393227, 0, 0, 393231, 0, 0, 393233, 0, 0, 393238, 0, 0, 393243, 0, 0, 458754, 0, 0, 458757, 0, 0, 458759, 0, 0, 458761, 0, 0, 458763, 0, 0, 458767, 0, 0, 458769, 0, 0, 458774, 0, 0, 458779, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524295, 0, 0, 524297, 0, 0, 524299, 0, 0, 524303, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 1966049, 1, 0, 1966050, 1, 0, 1966051, 1, 0, 1966052, 1, 0, 1966053, 1, 0, 1966054, 1, 0, 1966055, 1, 0, 1966056, 1, 0, 1966057, 1, 0, 1966058, 1, 0, 1966059, 1, 0, 1966060, 1, 0, 1966061, 1, 0, 1966062, 1, 0, 1966063, 1, 0, 1966064, 1, 0, 1966065, 1, 0, 1966066, 1, 0, 1966067, 1, 0, 1966068, 1, 0, 1966069, 1, 0, 1966070, 1, 0, 1966071, 1, 0, 1966072, 1, 0, 1966073, 1, 0, 1966074, 1, 0, 1966075, 1, 0, 1966076, 1, 0, 1966077, 1, 0, 1966078, 1, 0, 1966079, 1, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900547, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900551, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900554, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900557, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900560, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900564, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900567, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1900572, 1, 0, 1900573, 1, 0, 1900574, 1, 0, 1900575, 1, 0, 1900576, 1, 0, 1900577, 1, 0, 1900578, 1, 0, 1900579, 1, 0, 1900580, 1, 0, 1900581, 1, 0, 1900582, 1, 0, 1900583, 1, 0, 1900584, 1, 0, 1900585, 1, 0, 1900586, 1, 0, 1900587, 1, 0, 1900588, 1, 0, 1900589, 1, 0, 1900590, 1, 0, 1900591, 1, 0, 1900592, 1, 0, 1900593, 1, 0, 1900594, 1, 0, 1900595, 1, 0, 1900596, 1, 0, 1900597, 1, 0, 1900598, 1, 0, 1900599, 1, 0, 1900600, 1, 0, 1900601, 1, 0, 1900602, 1, 0, 1900603, 1, 0, 1900604, 1, 0 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 180.0
+margin_right = 391.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 54, 20 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Play"
+script = ExtResource( 5 )
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 240.0
+margin_right = 391.0
+margin_bottom = 295.0
+rect_pivot_offset = Vector2( 54, 20 )
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Level Select"
+script = ExtResource( 7 )
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 300.0
+margin_right = 391.0
+margin_bottom = 355.0
+rect_pivot_offset = Vector2( 54, 20 )
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Quit"
+script = ExtResource( 6 )

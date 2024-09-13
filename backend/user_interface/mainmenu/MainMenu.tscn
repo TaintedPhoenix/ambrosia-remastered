@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://bghirhx02qsnh"]
+
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/menuvbox.gd" id="1_e1lxb"]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/PlayButton.gd" id="4"]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/LevelSelectButton.gd" id="5"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/QuitButton.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://c8wkwv1bucp8i" path="res://resources/assets/backgrounds/SunsetClouds.png" id="6_yyqd6"]
+[ext_resource type="Theme" uid="uid://64j0ekvf3y7k" path="res://backend/user_interface/mainmenu/Menu.tres" id="7"]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/background.gd" id="7_ag35p"]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/title_container.gd" id="8_qqidf"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="9_yhrsx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v573o"]
+font = ExtResource("9_yhrsx")
+font_size = 144
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eldj4"]
+font = ExtResource("9_yhrsx")
+font_size = 72
+font_color = Color(0.784314, 0, 0.698039, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oa43"]
+bg_color = Color(0.0441189, 0.0711415, 0.103645, 1)
+
+[node name="mainmenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -7
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("6_yyqd6")
+script = ExtResource("7_ag35p")
+
+[node name="TitleContainer" type="Control" parent="."]
+z_index = -2
+anchors_preset = 0
+offset_left = 560.0
+offset_top = 150.0
+offset_right = 1360.0
+offset_bottom = 550.0
+script = ExtResource("8_qqidf")
+
+[node name="Heading" type="Label" parent="TitleContainer"]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("9_yhrsx")
+theme_override_font_sizes/font_size = 144
+text = "Ambrosia"
+label_settings = SubResource("LabelSettings_v573o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subheading" type="Label" parent="TitleContainer"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 175.0
+offset_right = 716.0
+offset_bottom = 240.0
+text = "Reborn"
+label_settings = SubResource("LabelSettings_eldj4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 432.0
+offset_right = 960.0
+offset_bottom = 540.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1oa43")
+script = ExtResource("1_e1lxb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 155.0
+offset_bottom = 85.0
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("7")
+text = "Play"
+script = ExtResource("4")
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(170, 30)
+layout_mode = 2
+theme = ExtResource("7")
+text = "Level Select"
+script = ExtResource("5")
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("7")
+text = "Quit"
+script = ExtResource("6")

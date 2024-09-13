@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3pcrax4txdtg"]
+
+[ext_resource type="Texture2D" uid="uid://cryrycs4iwnjc" path="res://resources/assets/environment/light/Mask.png" id="1_if8ha"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = -1
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_if8ha")

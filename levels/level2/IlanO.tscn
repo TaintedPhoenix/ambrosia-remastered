@@ -1,0 +1,491 @@
+[gd_scene load_steps=16 format=4 uid="uid://c4ew7wfl278ec"]
+
+[ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bb6gy5xt65qrd" path="res://resources/assets/environment/trees/tree2.png" id="2_of5ir"]
+[ext_resource type="TileSet" path="res://resources/assets/tiles/D4_WorldTileMap.tres" id="3"]
+[ext_resource type="Script" path="res://levels/level2/IlanO.gd" id="4"]
+[ext_resource type="Script" path="res://levels/level2/CanvasModulate.gd" id="8"]
+[ext_resource type="PackedScene" uid="uid://c43sfwogyvcxc" path="res://levels/level3/Light.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bkbyhmlfxbml6" path="res://resources/assets/environment/mushrooms/blueSmallMushroom.png" id="11"]
+[ext_resource type="TileSet" uid="uid://ct0xxnbnahj6a" path="res://Antonys_funny_tileset.tres" id="12"]
+[ext_resource type="Texture2D" uid="uid://tyqegqpnr77y" path="res://resources/assets/environment/mushrooms/blueMediumMushroom.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dsxmfpr0jjfvs" path="res://resources/assets/environment/mushrooms/redMediumMushroom.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cqqc742k0xwhg" path="res://resources/assets/environment/mushrooms/redSmallMushroom.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bdq32qpq0v3uk" path="res://resources/assets/environment/mushrooms/blueLargeMushroom.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dkqx6yabb6h7l" path="res://resources/assets/environment/mushrooms/redLargeMushroom.png" id="17"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1155, 474)
+
+[node name="IlanO" type="Node2D"]
+script = ExtResource("4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+expand_mode = 1
+
+[node name="ScreenShot2023-01-12At73237Pm4" type="Sprite2D" parent="."]
+modulate = Color(0.192157, 0.596078, 0.690196, 1)
+position = Vector2(4481, -469)
+scale = Vector2(2.64453, 2.64453)
+texture = ExtResource("2_of5ir")
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm4"]
+position = Vector2(-0.756256, -28.7386)
+scale = Vector2(1.10503, 1.10503)
+color = Color(0.105882, 0.317647, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="ScreenShot2023-01-12At73237Pm6" type="Sprite2D" parent="."]
+modulate = Color(0.192157, 0.596078, 0.690196, 1)
+position = Vector2(2966.44, -1491.95)
+scale = Vector2(5.33691, 5.33691)
+texture = ExtResource("2_of5ir")
+flip_h = true
+flip_v = true
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm6"]
+position = Vector2(3.85287, 29.5958)
+scale = Vector2(1.10503, 1.10503)
+color = Color(0.105882, 0.317647, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(5166, -489)
+scale = Vector2(0.60669, 0.60669)
+texture = ExtResource("17")
+
+[node name="Light" type="PointLight2D" parent="Sprite"]
+position = Vector2(-6.59521, -145.049)
+scale = Vector2(3.2773, 3.2773)
+color = Color(0.878431, 0.105882, 0.105882, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+position = Vector2(4483, -1450)
+scale = Vector2(0.60669, 0.60669)
+texture = ExtResource("16")
+flip_h = true
+
+[node name="Light" type="PointLight2D" parent="Sprite3"]
+position = Vector2(-6.59521, -145.049)
+scale = Vector2(3.2773, 3.2773)
+color = Color(0.164706, 0.105882, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="Sprite4" type="Sprite2D" parent="."]
+position = Vector2(1186, -87)
+scale = Vector2(0.60669, 0.60669)
+texture = ExtResource("16")
+flip_v = true
+
+[node name="Light" type="PointLight2D" parent="Sprite4"]
+position = Vector2(-6.59521, -145.049)
+scale = Vector2(3.2773, 3.2773)
+color = Color(0.164706, 0.105882, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="Layer1" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = ExtResource("3")
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAALAAIACAAAAAAAAAAMAAIACAAAAAAAAAANAAIACAAAAAAAAAAOAAIACAAAAAAAAAAPAAIACAAAAAAAAAAQAAIACAAAAAAAAAABAAIACAAAAAAAAAACAAIACAAAAAAAAAADAAIACAAAAAAAAAAEAAIACAAAAAAAAAAFAAIACAAAAAAAAAAGAAIACAAAAAAAAAAHAAIACAAAAAAAAAAIAAIACAAAAAAAAAAJAAIACAAAAAAAAAA=")
+tile_set = ExtResource("12")
+
+[node name="Endzone#CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-19.5, 1)
+shape = SubResource("1")
+
+[node name="ScreenShot2023-01-12At73237Pm" type="Sprite2D" parent="."]
+position = Vector2(5222, -896)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("2_of5ir")
+flip_v = true
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm"]
+position = Vector2(-2.46167, 20.9231)
+scale = Vector2(1.21602, 1.21602)
+color = Color(0.878431, 0.105882, 0.611765, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="ScreenShot2023-01-12At73237Pm2" type="Sprite2D" parent="."]
+modulate = Color(0.447084, 0.307619, 0.753906, 1)
+position = Vector2(1869, -68)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("2_of5ir")
+flip_h = true
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm2"]
+position = Vector2(1.23074, -27.8974)
+scale = Vector2(1.21602, 1.21602)
+color = Color(0.294118, 0.105882, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="ScreenShot2023-01-12At73237Pm3" type="Sprite2D" parent="."]
+modulate = Color(0.721569, 0.282353, 0.435294, 1)
+position = Vector2(2649.5, -211.574)
+scale = Vector2(1.83594, 1.83594)
+texture = ExtResource("2_of5ir")
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm3"]
+position = Vector2(-0.816917, -18.2065)
+scale = Vector2(1.10503, 1.10503)
+color = Color(0.709804, 0.105882, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="ScreenShot2023-01-12At73237Pm5" type="Sprite2D" parent="."]
+modulate = Color(0.721569, 0.282353, 0.435294, 1)
+position = Vector2(174, -159)
+scale = Vector2(3.55859, 3.55859)
+texture = ExtResource("2_of5ir")
+
+[node name="Light" type="PointLight2D" parent="ScreenShot2023-01-12At73237Pm5"]
+position = Vector2(-1.40504, -37.6553)
+scale = Vector2(1.10503, 1.10503)
+color = Color(0.709804, 0.105882, 0.878431, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("8")
+
+[node name="Shrooms" type="Node" parent="."]
+
+[node name="blueSmallMush2" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(3900, -160)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("11")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueSmallMush2"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueSmallMush3" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(2594, -799)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("11")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueSmallMush3"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueSmallMush4" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(2016, -1247)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("11")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueSmallMush4"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueMediumMush1" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(4294, -1278)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("13")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueMediumMush1"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueMediumMush2" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(3067, -190)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("13")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueMediumMush2"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueMediumMush3" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(1466, 67)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("13")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueMediumMush3"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redSmallMush1" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(4113, -800)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("15")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redSmallMush1"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redMediumMush1" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(3586, -703)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("14")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redMediumMush1"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redSmallMush3" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(5409, -288)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("15")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redSmallMush3"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redSmallMush4" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(4963, -483)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("15")
+flip_v = true
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redSmallMush4"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redSmallMush5" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(4768, -993)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("15")
+flip_v = true
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redSmallMush5"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="redSmallMush2" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.686275, 0.266667, 0.266667, 1)
+show_behind_parent = true
+position = Vector2(862, 97)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("15")
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/redSmallMush2"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="blueSmallMush7" type="Sprite2D" parent="Shrooms"]
+modulate = Color(0.270588, 0.333333, 1, 1)
+show_behind_parent = true
+position = Vector2(5534, -610)
+scale = Vector2(0.492188, 0.492188)
+texture = ExtResource("11")
+flip_v = true
+
+[node name="smallLight" type="PointLight2D" parent="Shrooms/blueSmallMush7"]
+position = Vector2(2.03174, -12.1905)
+scale = Vector2(7.98952, 7.98953)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector2(172, -325)
+
+[node name="Light2D" parent="Player" instance=ExtResource("9")]
+position = Vector2(-2.99997, -2)
+scale = Vector2(1.51875, 1.51875)
+
+[node name="KinematicBody2D4#smallLight4" type="PointLight2D" parent="."]
+position = Vector2(2540, 343)
+scale = Vector2(3.93235, 3.93235)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="KinematicBody2D6#smallLight6" type="PointLight2D" parent="."]
+position = Vector2(2335, 728)
+scale = Vector2(3.93235, 3.93235)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="KinematicBody2D7#smallLight5" type="PointLight2D" parent="."]
+position = Vector2(3583, 662)
+scale = Vector2(3.93235, 3.93235)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="KinematicBody2D5#smallLight3" type="PointLight2D" parent="."]
+position = Vector2(1558, -424)
+scale = Vector2(3.93235, 3.93235)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="KinematicBody2D3#smallLight2" type="PointLight2D" parent="."]
+position = Vector2(2778, -166)
+scale = Vector2(3.93235, 3.93235)
+color = Color(1, 0, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25
+
+[node name="KinematicBody2D2#smallLight2" type="PointLight2D" parent="."]
+position = Vector2(4349, -680)
+scale = Vector2(3.93235, 3.93235)
+color = Color(0, 0.156863, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("10")
+texture_scale = 0.25

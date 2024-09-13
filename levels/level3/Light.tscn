@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c43sfwogyvcxc"]
+
+[ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="1_h13dj"]
+
+[node name="Light2D" type="PointLight2D"]
+scale = Vector2(0.520627, 0.514279)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("1_h13dj")

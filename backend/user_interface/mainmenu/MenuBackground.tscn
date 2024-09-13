@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Global/Backend/Loader/Main Menu/Container.gd" type="Script" id=5]
+[ext_resource path="res://Global/Assets/Backgrounds/D2_SunsetClouds-1 (1).png.png" type="Texture" id=7]
+[ext_resource path="res://Global/Backend/Loader/Main Menu/TextureRect.gd" type="Script" id=8]
+
+[node name="Container" type="Container"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 674.0
+margin_bottom = 476.0
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_right = 3072.0
+margin_bottom = 1728.0
+rect_scale = Vector2( 0.875, 0.875 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
