@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5v26xk83bp5a"]
+
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="1_6n4ws"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glq87"]
+bg_color = Color(0, 0, 0.0745098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Tooltip" type="Panel"]
+visible = false
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 350.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_glq87")
+
+[node name="TooltipName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("1_6n4ws")
+theme_override_font_sizes/font_size = 27
+text = "Test Sword"
+
+[node name="TooltipLore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 44.0
+offset_right = 393.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("1_6n4ws")
+theme_override_font_sizes/font_size = 18
+text = "Test Sword"
+autowrap_mode = 3
+
+[node name="TooltipDamageLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 167.0
+offset_right = 124.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("1_6n4ws")
+theme_override_font_sizes/font_size = 18
+text = "Damage:"
+
+[node name="TooltipDamage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 168.0
+offset_right = 215.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("1_6n4ws")
+theme_override_font_sizes/font_size = 18
+text = "32767"
+
+[node name="TooltipCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 165.0
+offset_right = 393.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("1_6n4ws")
+theme_override_font_sizes/font_size = 27
+text = "32767"
+horizontal_alignment = 2

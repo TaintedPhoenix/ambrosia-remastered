@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=3 uid="uid://djdkroy8451pb"]
+
+[ext_resource type="Script" path="res://backend/user_interface/inventory/ItemBlockController.gd" id="1_tiv0w"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="3_gmcxk"]
+
+[sub_resource type="Theme" id="Theme_80n1b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4aod"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j2p3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ko6ax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvxm1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5gfky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_neaxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8v7un"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fg208"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jin8r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4go0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oglyv"]
+
+[node name="ItemBlock" type="Panel"]
+offset_right = 792.0
+offset_bottom = 100.0
+script = ExtResource("1_tiv0w")
+
+[node name="Hover" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 100.0
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 95.0
+offset_bottom = 95.0
+theme = SubResource("Theme_80n1b")
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 25.0
+offset_right = 582.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("3_gmcxk")
+theme_override_font_sizes/font_size = 45
+text = "Test Sword"
+
+[node name="ItemCount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 25.0
+offset_right = 777.0
+offset_bottom = 75.0
+theme_override_fonts/font = ExtResource("3_gmcxk")
+theme_override_font_sizes/font_size = 45
+text = "32767"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 792.0
+offset_bottom = 100.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v4aod")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_j2p3r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ko6ax")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_gvxm1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5gfky")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_neaxc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8v7un")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fg208")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jin8r")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4go0i")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oglyv")
+disabled = true
+flat = true
+
+[connection signal="mouse_entered" from="." to="." method="hover_start"]
+[connection signal="mouse_exited" from="." to="." method="hover_stop"]
+[connection signal="mouse_entered" from="Button" to="." method="hover_start"]
+[connection signal="mouse_exited" from="Button" to="." method="hover_stop"]

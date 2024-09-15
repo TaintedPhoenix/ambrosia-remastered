@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=3 uid="uid://dsnh3l8mirrju"]
+
+[ext_resource type="Theme" uid="uid://jv4r7lc4ip0j" path="res://resources/themes/user_interface/inventory/InventoryTheme.tres" id="1_ntwvy"]
+[ext_resource type="Script" path="res://backend/user_interface/inventory/ItemListController.gd" id="2_f4htf"]
+[ext_resource type="Script" path="res://backend/user_interface/inventory/InventoryPanel.gd" id="2_r5qb3"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="4_2sal0"]
+[ext_resource type="PackedScene" uid="uid://ucelxt525vdd" path="res://backend/user_interface/inventory/EquipmentSlot.tscn" id="4_6mod4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6ayn"]
+content_margin_left = 5.0
+content_margin_top = 1.0
+bg_color = Color(0.0784314, 0.0941176, 0.12549, 0.572549)
+border_width_bottom = 3
+border_color = Color(0.0784314, 0.0941176, 0.12549, 0.819608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_bco8g"]
+LineEdit/styles/normal = SubResource("StyleBoxFlat_l6ayn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpoj7"]
+bg_color = Color(0.0784314, 0.0941176, 0.12549, 0.572549)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ls3io"]
+color = Color(0.0784314, 0.0941176, 0.12549, 0.572549)
+vertical = true
+
+[node name="Node" type="Node"]
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Inventory"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -515.0
+offset_right = 624.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ntwvy")
+script = ExtResource("2_r5qb3")
+
+[node name="Inventory" type="Control" parent="Inventory/Panel"]
+anchors_preset = 0
+offset_right = 792.0
+offset_bottom = 1024.0
+scale = Vector2(0.75, 0.75)
+
+[node name="Control" type="Control" parent="Inventory/Panel/Inventory"]
+anchors_preset = 0
+offset_top = 85.0
+offset_right = 792.0
+offset_bottom = 149.0
+
+[node name="Search" type="LineEdit" parent="Inventory/Panel/Inventory/Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 589.0
+offset_bottom = 50.0
+scale = Vector2(1.333, 1.333)
+theme = SubResource("Theme_bco8g")
+theme_override_fonts/font = ExtResource("4_2sal0")
+theme_override_font_sizes/font_size = 18
+placeholder_text = "Search"
+caret_blink = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory/Panel/Inventory"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 154.0
+offset_right = 782.0
+offset_bottom = 1014.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lpoj7")
+
+[node name="ItemList" type="VBoxContainer" parent="Inventory/Panel/Inventory/ScrollContainer"]
+layout_mode = 2
+theme = ExtResource("1_ntwvy")
+theme_override_constants/separation = 100
+script = ExtResource("2_f4htf")
+
+[node name="Label" type="Label" parent="Inventory/Panel/Inventory"]
+layout_mode = 0
+offset_right = 792.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 72
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Inventory/Panel"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 3.0
+offset_right = 596.0
+offset_bottom = 765.0
+scale = Vector2(2, 1)
+theme_override_styles/separator = SubResource("StyleBoxLine_ls3io")
+
+[node name="Equipment" type="Control" parent="Inventory/Panel"]
+anchors_preset = 0
+offset_left = 596.0
+offset_top = 2.0
+offset_right = 1022.0
+offset_bottom = 766.0
+
+[node name="Label" type="Label" parent="Inventory/Panel/Equipment"]
+layout_mode = 0
+offset_right = 426.0
+offset_bottom = 74.5
+theme_override_font_sizes/font_size = 54
+text = "Equipment"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquipmentSlot" parent="Inventory/Panel/Equipment" instance=ExtResource("4_6mod4")]
+offset_top = 105.0
+offset_bottom = 265.0
+
+[node name="Tooltips" type="CanvasLayer" parent="."]

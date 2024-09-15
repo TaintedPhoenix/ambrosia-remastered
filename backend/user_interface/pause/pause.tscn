@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://be4c8ayowujgs"]
+
+[ext_resource type="Theme" uid="uid://d1sf4mp1kjwy6" path="res://resources/themes/user_interface/pause/Pause.tres" id="2"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/QuitButton.gd" id="3"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/ResumeButton.gd" id="4"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/LevelSelectButton.gd" id="5"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/MenuButton.gd" id="6"]
+
+[node name="Pause" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.631373)
+
+[node name="Label" type="Label" parent="."]
+text = "PAUSE"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Resume" type="Button" parent="Control"]
+layout_mode = 0
+theme = ExtResource("2")
+text = "RESUME"
+script = ExtResource("4")
+
+[node name="Quit" type="Button" parent="Control"]
+layout_mode = 0
+theme = ExtResource("2")
+text = "QUIT"
+script = ExtResource("3")
+
+[node name="Level Select" type="Button" parent="Control"]
+layout_mode = 0
+theme = ExtResource("2")
+text = "LEVEL SELECT"
+script = ExtResource("5")
+
+[node name="Menu" type="Button" parent="Control"]
+layout_mode = 0
+theme = ExtResource("2")
+text = "MAIN MENU"
+script = ExtResource("6")
+
+[connection signal="pressed" from="Control/Resume" to="Control/Resume" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control/Quit" method="_on_Quit_pressed"]
+[connection signal="pressed" from="Control/Level Select" to="Control/Level Select" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Control/Menu" to="Control/Menu" method="_on_Resume_pressed"]

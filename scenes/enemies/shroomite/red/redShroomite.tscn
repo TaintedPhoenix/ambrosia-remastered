@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://cg2xsc7ovtljx"]
+
+[ext_resource type="Texture2D" uid="uid://bgff0tsvp2tu4" path="res://resources/assets/enemies/shroomite/redShroomite.png" id="1"]
+[ext_resource type="Script" path="res://scenes/enemies/shroomite/redShroomite.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/enemies/shroomite/wake.gd" id="3"]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 53.0
+height = 118.0
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("1")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("1")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("1")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("1")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="9"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="10"]
+radius = 499.34
+
+[node name="KinematicBody2D" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("2")
+
+[node name="Area2Datk" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Datk"]
+visible = false
+position = Vector2(1, 19)
+rotation = 1.5708
+shape = SubResource("2")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-51, 55)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("9")
+frame = 4
+frame_progress = 0.402233
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2(5.64, 6.88)
+polygon = PackedVector2Array(-3.5461, 9.30233, 3.7234, 9.30233, 3.7234, 6.25, 7.97872, 6.25, 7.97872, 4.21512, 2.83688, -2.76163, -2.30496, -2.76163, -7.0922, 3.92442, -7.0922, 5.9593, -3.5461, 5.9593)
+
+[node name="wake" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wake"]
+visible = false
+position = Vector2(1, 21)
+shape = SubResource("10")
+
+[connection signal="area_exited" from="Area2Datk" to="." method="exited"]
+[connection signal="body_entered" from="Area2Datk" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2Datk" to="." method="_on_Area2Datk_body_entered"]
+[connection signal="child_entered_tree" from="RayCast2D" to="." method="_on_RayCast2D_child_entered_tree"]

@@ -1,4 +1,80 @@
 extends Node
 
+var HUD : Node
+var state = "other" #"other" "game" "inventory" "pause" "hidden"
+
+var inventoryElement : UiElement = UiElement.new("inventory", "res://backend/user_interface/inventory/inventory.tscn")
+var pauseElement : UiElement = UiElement.new("pause", "res://backend/user_interface/pause/pause.tscn")
+var gameHudElement: UiElement = UiElement.new("gamehud", "res://backend/user_interface/gamehud/gamehud.tscn")
+
+
+var activeElements : Array[UiElement] = []
+
 func _ready():
-	pass
+	HUD = Node.new()
+	HUD.name = "HUD"
+	set_process_mode(Node.PROCESS_MODE_ALWAYS)
+	HUD.set_process_mode(Node.PROCESS_MODE_ALWAYS)
+	add_child(HUD)
+	Loader.main_scene_changed.connect(scene_changed)
+	
+func _process(_delta):
+	if Input.is_action_just_pressed("pause") :
+		if state == "game":
+			state = "pause"
+			get_tree().paused = true
+			hideAllElements()
+			showElement(pauseElement)
+		elif state == "pause":
+			hideElement(pauseElement)
+			state = "game"
+			showElement(gameHudElement)
+			get_tree().paused = false
+		elif state == "inventory":
+			hideElement(inventoryElement)
+			get_tree().paused = false
+			state = "game"
+	elif Input.is_action_just_pressed("inventory"):
+		if state == "game":
+			state = "inventory"
+			get_tree().paused = true
+			showElement(inventoryElement)
+		elif state == "inventory":
+			hideElement(inventoryElement)
+			get_tree().paused = false
+			state = "game"
+	
+func scene_changed():
+	hideAllElements()
+	get_tree().paused = false
+	if state == "game":
+		showElement(gameHudElement)
+	elif state == "other":
+		pass
+
+func showElement(element : UiElement):
+	if not element in activeElements:
+		var x = element.instantiate()
+		x.name = element.name
+		HUD.add_child(x)
+		activeElements.append(element)
+		
+func unpause():
+	if state == "pause" or get_tree().paused:
+		hideElement(pauseElement)
+		state = "game"
+		showElement(gameHudElement)
+		get_tree().paused = false
+		
+func hideElement(element : UiElement):
+	if element in activeElements:
+		for kid in HUD.get_children():
+			if kid.name == element.name:
+				HUD.remove_child(kid)
+				activeElements.erase(element)
+	
+func hideAllElements():
+	for el in activeElements:
+		hideElement(el)
+		
+	

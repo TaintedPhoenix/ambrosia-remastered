@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://bh2hoiij3wi6d"]
+
+[ext_resource type="Script" path="res://backend/user_interface/inventory/item_frame.gd" id="1_imfbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0uup"]
+bg_color = Color(0, 0, 0.0509804, 0.411765)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0347181, 0.0363347, 0.0543402, 0.67451)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of6j1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3fxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbe4p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0n1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dm6mv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iesqr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qxv16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8un5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgkpg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bu8qw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mtbs"]
+
+[node name="ItemFrame" type="Panel"]
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g0uup")
+script = ExtResource("1_imfbx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 68.0
+offset_bottom = 68.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_of6j1")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_m3fxc")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rbe4p")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_w0n1d")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dm6mv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_iesqr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qxv16")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t8un5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bgkpg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bu8qw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5mtbs")
+flat = true

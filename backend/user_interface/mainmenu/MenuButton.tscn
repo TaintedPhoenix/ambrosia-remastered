@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Global/Backend/Loader/Main Menu/PlayButton.gd" type="Script" id=1]
-[ext_resource path="res://Global/Backend/Loader/Main Menu/QuitButton.gd" type="Script" id=2]
-[ext_resource path="res://Global/Backend/Interface/Monocraft.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Global/Backend/Loader/Main Menu/MainMenuFontOveridetres.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Global/Backend/Loader/Main Menu/Container.gd" type="Script" id=5]
-[ext_resource path="res://Global/Backend/Loader/Main Menu/Menu.tres" type="Theme" id=6]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/PlayButton.gd" id="1"]
+[ext_resource type="Script" path="res://backend/user_interface/pause/QuitButton.gd" id="2"]
+[ext_resource type="DynamicFontData" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="3"]
+[ext_resource type="DynamicFont" path="res://backend/user_interface/mainmenu/MainMenuFontOveridetres.tres" id="4"]
+[ext_resource type="Script" path="res://backend/user_interface/mainmenu/Container.gd" id="5"]
+[ext_resource type="Theme" uid="uid://64j0ekvf3y7k" path="res://backend/user_interface/mainmenu/Menu.tres" id="6"]
 
 [sub_resource type="DynamicFont" id=1]
 size = 79

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://daiq6yhjta2rj"]
+
+[ext_resource type="Script" path="res://scenes/player/attackArea.gd" id="1_hwp7b"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_hwp7b")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-5, -59, -6, 13, 73, 29, 73, 13, 70, -2, 59, -25, 46, -44, 22, -56)

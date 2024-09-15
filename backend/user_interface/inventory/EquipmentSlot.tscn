@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ucelxt525vdd"]
+
+[ext_resource type="Script" path="res://backend/user_interface/inventory/EquipmentSlot.gd" id="1_b164o"]
+[ext_resource type="PackedScene" uid="uid://bh2hoiij3wi6d" path="res://backend/user_interface/inventory/ItemFrame.tscn" id="1_psv5u"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="2_34f3h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qkhrw"]
+font = ExtResource("2_34f3h")
+font_size = 27
+font_color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="EquipmentSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 426.0
+offset_bottom = 160.0
+script = ExtResource("1_b164o")
+
+[node name="ItemFrame" parent="." instance=ExtResource("1_psv5u")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 17.0
+offset_right = 99.0
+offset_bottom = 89.0
+scale = Vector2(1.75, 1.75)
+
+[node name="Type" type="Label" parent="."]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 17.0
+offset_right = 323.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("2_34f3h")
+theme_override_font_sizes/font_size = 36
+text = "Weapon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 65.0
+offset_right = 426.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("2_34f3h")
+theme_override_font_sizes/font_size = 54
+text = "None"
+label_settings = SubResource("LabelSettings_qkhrw")
+vertical_alignment = 1

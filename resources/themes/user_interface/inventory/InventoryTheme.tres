@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://jv4r7lc4ip0j"]
+
+[ext_resource type="StyleBox" uid="uid://d22dhtje8ylg2" path="res://resources/themes/user_interface/inventory/TransparentBgBox.tres" id="1_nj3bx"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="1_pjdqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msv41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lyost"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oci7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ptfak"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwmhd"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_nj3bx")
+Button/styles/focus = ExtResource("1_nj3bx")
+Button/styles/hover = ExtResource("1_nj3bx")
+Button/styles/normal = ExtResource("1_nj3bx")
+Button/styles/pressed = ExtResource("1_nj3bx")
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_msv41")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_lyost")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_oci7m")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_ptfak")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_wwmhd")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_pjdqx")
+Panel/styles/panel = ExtResource("1_nj3bx")
