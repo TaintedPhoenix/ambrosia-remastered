@@ -1,5 +1,6 @@
 extends VBoxContainer
 
+@warning_ignore("unused_signal")
 signal clearTooltips
 
 const ItemBlock = preload("res://backend/user_interface/inventory/ItemBlock.tscn")

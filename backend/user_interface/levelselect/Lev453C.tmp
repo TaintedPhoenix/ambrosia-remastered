@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://xucj3f3hiqij" path="res://backend/user_interface/levelselect/LevelSelect.tres" id="1"]
 [ext_resource type="Script" path="res://backend/user_interface/levelselect/LevelSelect.gd" id="2"]
-[ext_resource type="Script" path="res://backend/user_interface/levelselect/BackButton.gd" id="4"]
+[ext_resource type="Script" path="res://backend/user_interface/levelselect/Back.gd" id="4"]
 [ext_resource type="Theme" uid="uid://d1sf4mp1kjwy6" path="res://resources/themes/user_interface/pause/Pause.tres" id="5"]
 
 [node name="rootNode" type="CanvasLayer"]

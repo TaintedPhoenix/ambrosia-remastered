@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7y2m3nukohdq"
-path="res://.godot/imported/Cataclysm.png-e9c63125623dc618659a1872615255ce.ctex"
+path="res://.godot/imported/Calamity.png-47426760d38b848cf8332c636ebf63b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/assets/items/Cataclysm.png"
-dest_files=["res://.godot/imported/Cataclysm.png-e9c63125623dc618659a1872615255ce.ctex"]
+source_file="res://resources/assets/items/Calamity.png"
+dest_files=["res://.godot/imported/Calamity.png-47426760d38b848cf8332c636ebf63b0.ctex"]
 
 [params]
 

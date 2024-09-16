@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dsnh3l8mirrju"]
 
-[ext_resource type="Theme" uid="uid://jv4r7lc4ip0j" path="res://resources/themes/user_interface/inventory/InventoryTheme.tres" id="1_ntwvy"]
-[ext_resource type="Script" path="res://backend/user_interface/inventory/ItemListController.gd" id="2_f4htf"]
-[ext_resource type="Script" path="res://backend/user_interface/inventory/InventoryPanel.gd" id="2_r5qb3"]
-[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="4_2sal0"]
-[ext_resource type="PackedScene" uid="uid://ucelxt525vdd" path="res://backend/user_interface/inventory/EquipmentSlot.tscn" id="4_6mod4"]
+[ext_resource type="Theme" uid="uid://jv4r7lc4ip0j" path="res://resources/themes/user_interface/inventory/InventoryTheme.tres" id="1_jgijl"]
+[ext_resource type="Script" path="res://backend/user_interface/inventory/InventoryPanel.gd" id="2_8uiwt"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="3_c0ly7"]
+[ext_resource type="Script" path="res://backend/user_interface/inventory/ItemListController.gd" id="4_oufs6"]
+[ext_resource type="PackedScene" uid="uid://ucelxt525vdd" path="res://backend/user_interface/inventory/EquipmentSlot.tscn" id="5_71y4u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6ayn"]
 content_margin_left = 5.0
@@ -43,8 +43,8 @@ offset_right = 624.0
 offset_bottom = 253.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ntwvy")
-script = ExtResource("2_r5qb3")
+theme = ExtResource("1_jgijl")
+script = ExtResource("2_8uiwt")
 
 [node name="Inventory" type="Control" parent="Inventory/Panel"]
 anchors_preset = 0
@@ -67,7 +67,7 @@ offset_right = 589.0
 offset_bottom = 50.0
 scale = Vector2(1.333, 1.333)
 theme = SubResource("Theme_bco8g")
-theme_override_fonts/font = ExtResource("4_2sal0")
+theme_override_fonts/font = ExtResource("3_c0ly7")
 theme_override_font_sizes/font_size = 18
 placeholder_text = "Search"
 caret_blink = true
@@ -82,9 +82,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lpoj7")
 
 [node name="ItemList" type="VBoxContainer" parent="Inventory/Panel/Inventory/ScrollContainer"]
 layout_mode = 2
-theme = ExtResource("1_ntwvy")
+theme = ExtResource("1_jgijl")
 theme_override_constants/separation = 100
-script = ExtResource("2_f4htf")
+script = ExtResource("4_oufs6")
 
 [node name="Label" type="Label" parent="Inventory/Panel/Inventory"]
 layout_mode = 0
@@ -120,7 +120,7 @@ text = "Equipment"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EquipmentSlot" parent="Inventory/Panel/Equipment" instance=ExtResource("4_6mod4")]
+[node name="EquipmentSlot" parent="Inventory/Panel/Equipment" instance=ExtResource("5_71y4u")]
 offset_top = 105.0
 offset_bottom = 265.0
 

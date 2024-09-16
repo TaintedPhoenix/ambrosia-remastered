@@ -1,0 +1,940 @@
+[gd_scene load_steps=18 format=4 uid="uid://tpxf1vx5ejis"]
+
+[ext_resource type="Script" path="res://levels/level3/LevelData.gd" id="1_g7rbg"]
+[ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="2_w8ven"]
+[ext_resource type="PackedScene" uid="uid://c43sfwogyvcxc" path="res://levels/level3/Light.tscn" id="3_63s5i"]
+[ext_resource type="Script" path="res://levels/level3/canvasColor.gd" id="4_nrvmy"]
+[ext_resource type="PackedScene" uid="uid://do4jmywscftk4" path="res://backend/loader/load_zones/Endzone.tscn" id="5_ew1hf"]
+[ext_resource type="TileSet" uid="uid://ct0xxnbnahj6a" path="res://Antonys_funny_tileset.tres" id="6_oxe0w"]
+[ext_resource type="Texture2D" uid="uid://bb6gy5xt65qrd" path="res://resources/assets/environment/trees/tree2.png" id="7_fgdeo"]
+[ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="8_dvwaq"]
+[ext_resource type="Texture2D" uid="uid://cqqc742k0xwhg" path="res://resources/assets/environment/mushrooms/redSmallMushroom.png" id="9_l165y"]
+[ext_resource type="Texture2D" uid="uid://bkbyhmlfxbml6" path="res://resources/assets/environment/mushrooms/blueSmallMushroom.png" id="10_6m8ro"]
+[ext_resource type="Texture2D" uid="uid://dsxmfpr0jjfvs" path="res://resources/assets/environment/mushrooms/redMediumMushroom.png" id="11_dsr1f"]
+[ext_resource type="Texture2D" uid="uid://dkqx6yabb6h7l" path="res://resources/assets/environment/mushrooms/redLargeMushroom.png" id="12_ao3q0"]
+[ext_resource type="Texture2D" uid="uid://tyqegqpnr77y" path="res://resources/assets/environment/mushrooms/blueMediumMushroom.png" id="13_824cl"]
+[ext_resource type="PackedScene" uid="uid://dhacemmrpk6" path="res://backend/loader/load_zones/Fallzone.tscn" id="16_3j0ou"]
+[ext_resource type="PackedScene" uid="uid://cg2xsc7ovtljx" path="res://scenes/enemies/shroomite/red/redShroomite.tscn" id="17_d46x4"]
+[ext_resource type="PackedScene" uid="uid://djxvnkpd8su55" path="res://scenes/enemies/shroomite/blue/blueShroomite.tscn" id="18_bcj1o"]
+[ext_resource type="PackedScene" uid="uid://bc21le3lhi7b7" path="res://scenes/collectables/item/item.tscn" id="19_w8m16"]
+
+[node name="rootNode" type="Node2D"]
+script = ExtResource("1_g7rbg")
+
+[node name="Player" parent="." instance=ExtResource("2_w8ven")]
+position = Vector2(1084, -716)
+
+[node name="Light" parent="Player" instance=ExtResource("3_63s5i")]
+scale = Vector2(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("4_nrvmy")
+
+[node name="Endzone" parent="." instance=ExtResource("5_ew1hf")]
+position = Vector2(4898, -45)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+scale = Vector2(0.75, 0.75)
+tile_map_data = PackedByteArray("AABFACIACQAAAAAAAwBGACIACQAAAAAAAwBHACIACQAAAAAAAwBIACIACQAAAAAAAwBJACIACQAAAAAAAwBKACIACQAAAAAAAwA+ADAAAgAAAAAAAAA/ADAAAgAAAAAAAABAADAAAgAAAAAAAABBADAAAgAAAAAAAABCADAAAgAAAAAAAABDADAAAgAAAAAAAAAvAC8ACAAAAAAAAAAwAC8ACAAAAAAAAAAxAC8ACAAAAAAAAAAyAC8ACAAAAAAAAAAzAC8ACAAAAAAAAAA0AC8ACAAAAAAAAAA1AC8ACAAAAAAAAAA2AC8ACAAAAAAAAAA3AC8ACAAAAAAAAAA4AC8ACAAAAAAAAAA5AC8ACAAAAAAAAAARAC8ACAAAAAAAAAASAC8ACAAAAAAAAAATAC8ACAAAAAAAAAAUAC8ACAAAAAAAAAAVAC8ACAAAAAAAAAAWAC8ACAAAAAAAAAAXAC8ACAAAAAAAAAAYAC8ACAAAAAAAAAAZAC8ACAAAAAAAAAAbAC8AAgAAAAAAAAAcAC8AAgAAAAAAAAAdAC8AAgAAAAAAAAAeAC8AAgAAAAAAAAAfAC8AAgAAAAAAAAAgAC8AAgAAAAAAAAAhAC8AAgAAAAAAAAAiAC8AAgAAAAAAAAAjAC8AAgAAAAAAAAAkAC8AAgAAAAAAAAAlAC8AAgAAAAAAAAAmAC8AAgAAAAAAAAAnAC8AAgAAAAAAAAAoAC8AAgAAAAAAAAApAC8AAgAAAAAAAAAqAC8AAgAAAAAAAAArAC8AAgAAAAAAAABPACwACQAAAAAAAABQACwACQAAAAAAAABRACwACQAAAAAAAABSACwACQAAAAAAAABTACwACQAAAAAAAABSACIACQAAAAIAAgBSACMACQAAAAIAAgBSACQACQAAAAIAAgBSACUACQAAAAIAAgBSACYACQAAAAIAAgBWAC8ACQAAAAIAAABXAC8ACQAAAAIAAABYAC8ACQAAAAIAAABZAC8ACQAAAAIAAABaAC8ACQAAAAIAAABdADIACQAAAAIAAABeADIACQAAAAIAAABfADIACQAAAAIAAABgADIACQAAAAIAAABkADMACAAAAAAAAABlADMACAAAAAAAAABmADMACAAAAAAAAABqADEACAAAAAAAAABrADEACAAAAAAAAABsADEACAAAAAAAAABtADEACAAAAAAAAABuADEACAAAAAAAAABvADEACAAAAAAAAABwADEACAAAAAAAAABxADEACAAAAAAAAAByADEACAAAAAAAAABzADEACAAAAAAAAAB0ADEACAAAAAAAAAB4ADIACAAAAAAAAAB5ADIACAAAAAAAAAB6ADIACAAAAAAAAAB7ADIACAAAAAAAAAB/ADEACAAAAAAAAACAADEACAAAAAAAAACBADEACAAAAAAAAACCADEACAAAAAAAAACDADEACAAAAAAAAACEADEACAAAAAAAAACFADEACAAAAAAAAACGADEACAAAAAAAAACHADEACAAAAAAAAACIADEACAAAAAAAAACJADEACAAAAAAAAACKADEACAAAAAAAAACLADEACAAAAAAAAACMADEACAAAAAAAAACNADEACAAAAAAAAACOADEACAAAAAAAAACPADEACAAAAAAAAACQADEACAAAAAAAAACRADEACAAAAAAAAACSADEACAAAAAAAAACTADEACAAAAAAAAACUADEACAAAAAAAAACVADEACAAAAAAAAACWADEACAAAAAAAAACXADEACAAAAAAAAACYADEACAAAAAAAAACZADEACAAAAAAAAACaADEACAAAAAAAAACbADEACAAAAAAAAACPACsACAAAAAAAAACQACsACAAAAAAAAACRACsACAAAAAAAAACSACsACAAAAAAAAACGACoACAAAAAAAAACHACoACAAAAAAAAACIACoACAAAAAAAAACQACUACAAAAAAAAACRACUACAAAAAAAAACSACUACAAAAAAAAACGACYACAAAAAAAAACHACYACAAAAAAAAACIACYACAAAAAAAAACJACYACAAAAAAAAACTAB4ACAAAAAAAAACUAB4ACAAAAAAAAACVAB4ACAAAAAAAAACSAB4ACAAAAAAAAACHABcACAAAAAAAAACIABcACAAAAAAAAACJABcACAAAAAAAAACKABcACAAAAAAAAACLABcACAAAAAAAAACaABQACAAAAAAAAACbABQACAAAAAAAAACcABQACAAAAAAAAACPABEACAAAAAAAAACQABEACAAAAAAAAACRABEACAAAAAAAAACSABEACAAAAAAAAACBAC0ACAAAAAAAAACCAC0ACAAAAAAAAAB+ACoACAAAAAAAAAB/ACoACAAAAAAAAAB8ACYACAAAAAAAAAB9ACYACAAAAAAAAACCACYACAAAAAAAAACDACYACAAAAAAAAACEACYACAAAAAAAAACFACYACAAAAAAAAACPACUACAAAAAAAAACOACUACAAAAAAAAACNACUACAAAAAAAAACMACUACAAAAAAAAACVACQACAAAAAAAAACWACQACAAAAAAAAACZACIACAAAAAAAAACaACIACAAAAAAAAACcAB8ACAAAAAAAAACdAB8ACAAAAAAAAACWAB4ACAAAAAAAAACXAB4ACAAAAAAAAACPABsACAAAAAAAAACQABsACAAAAAAAAACNABkACAAAAAAAAACMABkACAAAAAAAAACFABUACAAAAAAAAACGABUACAAAAAAAAACDABMACAAAAAAAAACEABMACAAAAAAAAACBABEACAAAAAAAAACCABEACAAAAAAAAACHABEACAAAAAAAAACIABEACAAAAAAAAACJABEACAAAAAAAAACKABEACAAAAAAAAACLABEACAAAAAAAAACMABEACAAAAAAAAACNABEACAAAAAAAAACOABEACAAAAAAAAACGABEACAAAAAAAAABHAC4ACQAAAAAAAABIAC4ACQAAAAAAAABJAC4ACQAAAAAAAABKAC4ACQAAAAAAAABLAC4ACQAAAAAAAABMAC4ACQAAAAAAAABNAC4ACQAAAAAAAAAdAPn/AQAAAAAAAAAeAPn/AQAAAAAAAAAfAPn/AQAAAAAAAAAbAPn/AQAAAAAAAAAcAPn/AQAAAAAAAAAgAPn/AQAAAAAAAAAhAPn/AQAAAAAAAAAiAPn/AQAAAAAAAAAaAPn/AQAAAAAAAAAZAPn/AQAAAAAAAAAYAPn/AQAAAAAAAAAjAPn/AQAAAAAAAAAXAPn/AQAAAAAAAAAkAPn/AQAGAAAAAAAkAPj/AQABAAAAAAAkAPf/AQABAAAAAAAkAPb/AQACAAAAAAAlAPn/AQAAAAAAAAAmAPn/AQAAAAAAAAAnAPn/AQAAAAAAAAAoAPn/AQAAAAAAAAApAPn/AQAAAAAAAAAqAPn/AQAEAAAAAwAvAPn/AQAEAAEAAAAqAPr/AQAAAAAAAwAqAPv/AQAAAAAAAwAqAPz/AQAAAAAAAwAqAP3/AQAAAAAAAwAqAP7/AQAAAAAAAwAqAP//AQAAAAAAAwAqAAAAAQAAAAAAAwAqAAEAAQAAAAAAAwAqAAIAAQAAAAAAAwAvAPr/AQAAAAEAAgAvAPv/AQAAAAEAAgAvAPz/AQAAAAEAAgAvAP3/AQAAAAEAAgAvAP7/AQAAAAEAAgAvAP//AQAAAAEAAgAvAAAAAQAAAAEAAgAvAAEAAQAAAAEAAgAvAAIAAQAAAAEAAgAwAPn/AQAAAAEAAAAxAPn/AQAAAAEAAAAyAPn/AQAAAAEAAAAzAPn/AQAAAAEAAAA0APn/AQAAAAEAAAA1APn/AQAEAAEAAwAWAPn/AQAFAAAAAQAWAPj/AQAAAAAAAwAWAPf/AQAAAAAAAwAWAPb/AQAAAAAAAwAWAPX/AQAAAAAAAwAWAPT/AQAAAAAAAwAWAPP/AQAAAAAAAwAWAPL/AQAEAAAAAwAWAO3/AQAEAAAAAgAWAOz/AQAAAAAAAwAVAPL/AQAAAAAAAAAUAPL/AQAAAAAAAAATAPL/AQAAAAAAAAASAPL/AQAAAAAAAAARAPL/AQAAAAAAAAAVAO3/AQAAAAAAAQAUAO3/AQAAAAAAAQATAO3/AQAAAAAAAQASAO3/AQAAAAAAAQARAO3/AQAAAAAAAQAQAO7/AQAAAAAAAwAQAO//AQAAAAAAAwAQAPD/AQAAAAAAAwAQAPH/AQAAAAAAAwAQAPL/AQAFAAAAAQAQAO3/AQAFAAAAAwAWAOv/AQAFAAAAAwAXAOv/AQAAAAAAAQAYAOv/AQAAAAAAAQAZAOv/AQAAAAAAAQAeAOv/AQAAAAAAAQAfAOv/AQAAAAAAAQAgAOv/AQAAAAAAAQAhAOv/AQAAAAAAAQAiAOv/AQAEAAAAAgAaAO7/AQAEAAAAAQAcAO7/AQAEAAAAAgAbAO7/AQAAAAAAAQAaAO3/AQAAAAAAAgAaAOz/AQAAAAAAAgAcAO3/AQAAAAAAAwAcAOz/AQAAAAAAAwAdAOv/AQAAAAAAAQAaAOv/AQAFAAAAAgAcAOv/AQAFAAAAAwA1APr/AQAAAAEAAwA1APv/AQAAAAEAAwA1APz/AQAAAAEAAwA1AP3/AQAAAAEAAwA1AP7/AQAAAAEAAwA1AP//AQAAAAEAAwA1AAAAAQAAAAEAAwA2AAEAAQAAAAEAAAA3AAEAAQAAAAEAAAA4AAEAAQAAAAEAAAA5AAEAAQAAAAEAAAA6AAEAAQAAAAEAAAA7AAEAAQAAAAEAAAA8AAEAAQAAAAEAAAA9AAEAAQAAAAEAAAA+AAEAAQAAAAEAAAA/AAEAAQAAAAEAAABAAAEAAQAAAAEAAABBAAEAAQAAAAEAAABCAAEAAQAAAAEAAABDAAEAAQAAAAEAAABEAAEAAQAAAAEAAAA1AAEAAQAFAAEAAQAiAOr/AQAAAAAAAwAiAOn/AQAAAAAAAwAiAOj/AQAAAAAAAwAiAOf/AQAAAAAAAwAiAOb/AQAAAAAAAwAiAOX/AQAAAAAAAwAiAOT/AQAAAAAAAwAiAOP/AQAAAAAAAwAiAOL/AQAAAAAAAwAiAOH/AQAAAAAAAwAiAOD/AQAAAAAAAwAiAN//AQAAAAAAAwAiAN7/AQAAAAAAAwAiAN3/AQAAAAAAAwAiANz/AQAAAAAAAwAiANv/AQAAAAAAAwBFAAEAAQAAAAEAAABGAAEAAQAAAAEAAABHAAEAAQAAAAEAAABIAAEAAQAAAAEAAABJAAEAAQAAAAEAAABKAAEAAQAAAAEAAABLAAEAAQAAAAEAAABMAAEAAQAAAAEAAABFAP3/AQAEAAEAAgBJAP7/AQAEAAEAAgBEAP3/AQAEAAEAAQBIAP7/AQAEAAEAAQBEAPz/AQAAAAEAAgBEAPv/AQAAAAEAAgBEAPr/AQAAAAEAAgBEAPn/AQAAAAEAAgBEAPj/AQAAAAEAAgBEAPf/AQAAAAEAAgBEAPb/AQAAAAEAAgBEAPX/AQAAAAEAAgBEAPT/AQAAAAEAAgBFAPz/AQAAAAEAAwBFAPv/AQAAAAEAAwBGAPr/AQAAAAEAAQBHAPr/AQAAAAEAAQBKAPj/AQAAAAEAAQBLAPj/AQAAAAEAAQBIAPv/AQAAAAEAAgBIAPz/AQAAAAEAAgBIAP3/AQAAAAEAAgBJAP3/AQAAAAEAAwBJAPz/AQAAAAEAAwBJAPv/AQAAAAEAAwBMAPv/AQAAAAEAAgBMAPr/AQAAAAEAAgBMAPn/AQAAAAEAAgBNAPn/AQAAAAEAAwBNAPr/AQAAAAEAAwBNAPv/AQAAAAEAAwBJAPn/AQAAAAEAAwBJAPr/AQAAAAEAAwBMAPz/AQAEAAEAAQBNAPz/AQAEAAEAAgBNAAEAAQAAAAEAAABOAAEAAQAAAAEAAABPAAEAAQAAAAEAAABQAAEAAQAAAAEAAABRAAEAAQAAAAEAAABSAAEAAQAAAAEAAABTAAEAAQAAAAEA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")
+tile_set = ExtResource("6_oxe0w")
+
+[node name="Trees" type="Node" parent="Layer0"]
+
+[node name="Bluetree2" type="Sprite2D" parent="Layer0/Trees"]
+modulate = Color(0.392157, 1, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1302, -678)
+scale = Vector2(-1.75, -2)
+texture = ExtResource("7_fgdeo")
+
+[node name="Light" type="PointLight2D" parent="Layer0/Trees/Bluetree2"]
+position = Vector2(-4.40002, -20.8002)
+scale = Vector2(0.5, 0.5)
+color = Color(0, 0.505882, 1, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Bluetree3" type="Sprite2D" parent="Layer0/Trees"]
+modulate = Color(0.392157, 1, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1819, -1009)
+rotation = -4.71239
+scale = Vector2(1.75, 2)
+texture = ExtResource("7_fgdeo")
+
+[node name="Light" type="PointLight2D" parent="Layer0/Trees/Bluetree3"]
+position = Vector2(-4.40002, -20.8002)
+color = Color(0, 0.505882, 1, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Redtree1" type="Sprite2D" parent="Layer0/Trees"]
+modulate = Color(1, 0, 0.211765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2397, -482)
+scale = Vector2(1.75, 2)
+texture = ExtResource("7_fgdeo")
+flip_h = true
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree1"]
+position = Vector2(3.33322, -29.3333)
+color = Color(1, 0.00392157, 0.00392157, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Redtree2" type="Sprite2D" parent="Layer0/Trees"]
+modulate = Color(1, 0, 0.211765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3026, -592)
+rotation = 3.14159
+scale = Vector2(1.75, 2)
+texture = ExtResource("7_fgdeo")
+flip_h = true
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree2"]
+position = Vector2(3.33322, -29.3333)
+color = Color(1, 0.00392157, 0.00392157, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Redtree3" type="Sprite2D" parent="Layer0/Trees"]
+modulate = Color(1, 0, 0.211765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2993, -1196)
+rotation = 4.71239
+scale = Vector2(2, 2)
+texture = ExtResource("7_fgdeo")
+flip_h = true
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree3"]
+position = Vector2(3.33322, -29.3333)
+color = Color(1, 0.00392157, 0.00392157, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Shrooms" type="Node" parent="Layer0"]
+
+[node name="redLarge1" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2708, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_ao3q0")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redLarge1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2637, 21)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall6" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2978, 29)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall6"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall4" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3404, -219)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall4"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall5" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3697, -121)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall5"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall2" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2306, -351)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall2"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall3" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3021, -839)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall3"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall3" type="Sprite2D" parent="Layer0/Shrooms/redSmall3"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3021, -839)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall3/redSmall3"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redMed1" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2568, -390)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_dsr1f")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redMed2" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3036, -6)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_dsr1f")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed2"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redMed3" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3172, -664)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_dsr1f")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed3"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall7" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3336, 31)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall7"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redSmall8" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3788, 28)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall8"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1497, -355)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall4" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1693, -359)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall4"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall5" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2091, -188)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall5"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall2" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1452, -940)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall2"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall3" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1530, -937)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall3"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueMed1" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1959, -391)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueMed2" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1141, -390)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueMed2"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueMed3" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1631, -904)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueMed3"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueMed4" type="Sprite2D" parent="Layer0/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(1179, -905)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueMed4"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="Fallzone" parent="." instance=ExtResource("16_3j0ou")]
+position = Vector2(4085, 128)
+
+[node name="Item" parent="." instance=ExtResource("19_w8m16")]
+position = Vector2(2423, -388)
+
+[node name="Item2" parent="." instance=ExtResource("19_w8m16")]
+position = Vector2(928, -724)
+itemId = "bloody_cleaver"
+
+[node name="Reference" type="Node" parent="."]
+
+[node name="Trees" type="Node" parent="Reference"]
+
+[node name="Orangetree1" type="Sprite2D" parent="Reference/Trees"]
+modulate = Color(1, 0.4, 0, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(7006, 2892)
+scale = Vector2(3, 3)
+texture = ExtResource("7_fgdeo")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Trees/Orangetree1"]
+position = Vector2(3.33322, -29.3333)
+color = Color(1, 0.588235, 0.00392157, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Redtree1" type="Sprite2D" parent="Reference/Trees"]
+modulate = Color(1, 0, 0.211765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(727, 2523)
+scale = Vector2(3, 3)
+texture = ExtResource("7_fgdeo")
+flip_h = true
+
+[node name="Light2" type="PointLight2D" parent="Reference/Trees/Redtree1"]
+position = Vector2(3.33322, -29.3333)
+color = Color(1, 0.00392157, 0.00392157, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Purpletree1" type="Sprite2D" parent="Reference/Trees"]
+modulate = Color(1, 0, 0.796078, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(5556, 2390)
+rotation = 1.5708
+scale = Vector2(3, 3)
+texture = ExtResource("7_fgdeo")
+
+[node name="Light" type="PointLight2D" parent="Reference/Trees/Purpletree1"]
+position = Vector2(-4.40002, 22.5331)
+color = Color(1, 0, 0.796078, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Greentree1" type="Sprite2D" parent="Reference/Trees"]
+modulate = Color(0.176471, 0.74902, 0.129412, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(4596, 2478)
+scale = Vector2(3, 3)
+texture = ExtResource("7_fgdeo")
+flip_v = true
+
+[node name="Light" type="PointLight2D" parent="Reference/Trees/Greentree1"]
+position = Vector2(-4.40002, 22.5331)
+color = Color(0.14902, 1, 0, 1)
+energy = 2.0
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Bluetree1" type="Sprite2D" parent="Reference/Trees"]
+modulate = Color(0.392157, 1, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2156, 2604)
+scale = Vector2(5, 5)
+texture = ExtResource("7_fgdeo")
+
+[node name="Light" type="PointLight2D" parent="Reference/Trees/Bluetree1"]
+position = Vector2(-4.40002, -20.8002)
+color = Color(0, 0.505882, 1, 1)
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+metadata/_edit_lock_ = true
+
+[node name="Shrooms" type="Node" parent="Reference"]
+
+[node name="redSmall1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3104, 2979)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/redSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redMed1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(3608, 2949)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_dsr1f")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/redMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="redLarge1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.988235, 0.839216, 0.839216, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(8126, 2729)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_ao3q0")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/redLarge1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueSmall1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(4089, 3040)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/blueSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blueMed1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0, 0.392157, 1, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(2703, 2951)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/blueMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.0313726, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="orangeSmall1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.866667, 0.713726, 0.517647, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(7392, 3113)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_l165y")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/orangeSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.470588, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="orangeMed1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.866667, 0.713726, 0.517647, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(6500, 3211)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_dsr1f")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/orangeMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(1, 0.470588, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="greenSmall1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.494118, 0.803922, 0.537255, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(5215, 2791)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/greenSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0, 1, 0.156863, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="greenMed1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.494118, 0.803922, 0.537255, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(4756, 2300)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+flip_v = true
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/greenMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0, 1, 0.156863, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="purpleSmall1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.623529, 0.235294, 0.611765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(6050, 3175)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_6m8ro")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/purpleSmall1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.803922, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="purpleMed1" type="Sprite2D" parent="Reference/Shrooms"]
+modulate = Color(0.623529, 0.235294, 0.611765, 1)
+show_behind_parent = true
+z_index = -1
+position = Vector2(5709, 2952)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_824cl")
+
+[node name="Light2" type="PointLight2D" parent="Reference/Shrooms/purpleMed1"]
+position = Vector2(4.00021, -25.9998)
+color = Color(0.803922, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="Enemies" type="Node" parent="Reference"]
+
+[node name="red1" parent="Reference/Enemies" instance=ExtResource("17_d46x4")]
+modulate = Color(1, 0.611765, 0.611765, 1)
+position = Vector2(3494, 2947)
+
+[node name="Light2" type="PointLight2D" parent="Reference/Enemies/red1"]
+position = Vector2(-3.24249e-05, 11)
+color = Color(1, 0.00392157, 0.00392157, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="orange1" parent="Reference/Enemies" instance=ExtResource("17_d46x4")]
+modulate = Color(0.968627, 0.435294, 0.0823529, 1)
+position = Vector2(7180, 3070)
+
+[node name="Light2" type="PointLight2D" parent="Reference/Enemies/orange1"]
+position = Vector2(-3.24249e-05, 11)
+color = Color(1, 0.423529, 0, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="blue1" parent="Reference/Enemies" instance=ExtResource("18_bcj1o")]
+modulate = Color(0.117647, 0.52549, 1, 1)
+position = Vector2(2532, 2946)
+
+[node name="Light2" type="PointLight2D" parent="Reference/Enemies/blue1"]
+position = Vector2(-3.24249e-05, 11)
+color = Color(0.00392157, 0.0431373, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="purple1" parent="Reference/Enemies" instance=ExtResource("18_bcj1o")]
+modulate = Color(1, 0.113725, 0.631373, 1)
+position = Vector2(5607, 2942)
+
+[node name="Light2" type="PointLight2D" parent="Reference/Enemies/purple1"]
+position = Vector2(-3.24249e-05, 11)
+color = Color(0.780392, 0, 1, 1)
+energy = 0.75
+range_z_min = -15
+range_z_max = 15
+shadow_enabled = true
+texture = ExtResource("8_dvwaq")
+texture_scale = 2.0
+metadata/_edit_lock_ = true

@@ -8,7 +8,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameData.discard = connect("pressed", self, "pressed")
+	pressed.connect(onpress)
 	
-func pressed():
-	Loader.loadScenePath("res://Global/Backend/Loader/Main Menu/MainMenu.tscn")
+func onpress():
+	Loader.loadScenePath("res://backend/user_interface/mainmenu/MainMenu.tscn")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhacemmrpk6"]
 
-[ext_resource type="Script" path="res://levels/level3/Fallzone.gd" id="1"]
+[ext_resource type="Script" path="res://backend/loader/load_zones/Fallzone.gd" id="1"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(7558, 76)

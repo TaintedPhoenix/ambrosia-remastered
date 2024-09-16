@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="ambrosia-remastered"
+run/main_scene="res://backend/user_interface/mainmenu/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -90,3 +91,4 @@ interact={
 
 textures/canvas_textures/default_texture_filter=0
 textures/decals/filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

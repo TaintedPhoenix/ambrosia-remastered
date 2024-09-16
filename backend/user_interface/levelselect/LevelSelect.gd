@@ -3,11 +3,14 @@ extends Button
 var level = int(text)
 
 func _ready():
+	position = Vector2(((level-1) % 5)*40 + 20, ((level-1)/5)*40 + 20)
+	
 	if level > Loader.maxLevel:
 		disabled = true
 	else:
-		GameData.discard = connect("pressed", self, "pressed")
+		pressed.connect(onpress)
 
-func pressed():
+func onpress():
 	if not disabled:
-		Loader.loadScene(level)
+		Loader.loadLevel(level)
+		

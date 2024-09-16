@@ -6,6 +6,5 @@ extends Node2D
 @export var EXT = true
 
 func _ready():
-	Loader.currentLevel = 16
 	UI.state = "game"
 	UI.scene_changed()

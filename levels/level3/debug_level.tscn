@@ -1,24 +1,24 @@
-[gd_scene load_steps=28 format=4 uid="uid://xghwily4dk5v"]
+[gd_scene load_steps=28 format=4 uid="uid://budvstmhk1dbk"]
 
-[ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="1"]
-[ext_resource type="Script" path="res://levels/level3/canvasColor.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://do4jmywscftk4" path="res://backend/loader/load_zones/Endzone.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="4"]
-[ext_resource type="PackedScene" uid="uid://dhacemmrpk6" path="res://backend/loader/load_zones/Fallzone.tscn" id="5"]
-[ext_resource type="TileSet" uid="uid://ct0xxnbnahj6a" path="res://Antonys_funny_tileset.tres" id="6"]
-[ext_resource type="Texture2D" uid="uid://bb6gy5xt65qrd" path="res://resources/assets/environment/trees/tree2.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://cqqc742k0xwhg" path="res://resources/assets/environment/mushrooms/redSmallMushroom.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://bkbyhmlfxbml6" path="res://resources/assets/environment/mushrooms/blueSmallMushroom.png" id="9"]
-[ext_resource type="Texture2D" uid="uid://tyqegqpnr77y" path="res://resources/assets/environment/mushrooms/blueMediumMushroom.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://dsxmfpr0jjfvs" path="res://resources/assets/environment/mushrooms/redMediumMushroom.png" id="11"]
-[ext_resource type="Script" path="res://levels/level3/LevelData.gd" id="12"]
-[ext_resource type="PackedScene" uid="uid://c43sfwogyvcxc" path="res://levels/level3/Light.tscn" id="13"]
-[ext_resource type="Texture2D" uid="uid://dkqx6yabb6h7l" path="res://resources/assets/environment/mushrooms/redLargeMushroom.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://ceefse0svrnd2" path="res://resources/assets/environment/misc/vortex.png" id="15"]
-[ext_resource type="Script" path="res://levels/level3/custom_Endzone.gd" id="16"]
-[ext_resource type="PackedScene" uid="uid://cg2xsc7ovtljx" path="res://scenes/enemies/shroomite/red/redShroomite.tscn" id="17"]
-[ext_resource type="PackedScene" uid="uid://djxvnkpd8su55" path="res://scenes/enemies/shroomite/blue/blueShroomite.tscn" id="18"]
-[ext_resource type="PackedScene" uid="uid://bc21le3lhi7b7" path="res://scenes/collectables/item/item.tscn" id="19_yskvx"]
+[ext_resource type="Script" path="res://levels/level3/LevelData.gd" id="1_ub8dg"]
+[ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="2_7fuak"]
+[ext_resource type="PackedScene" uid="uid://c43sfwogyvcxc" path="res://levels/level3/Light.tscn" id="3_6w6c7"]
+[ext_resource type="Script" path="res://levels/level3/canvasColor.gd" id="4_twulh"]
+[ext_resource type="PackedScene" uid="uid://do4jmywscftk4" path="res://backend/loader/load_zones/Endzone.tscn" id="5_6rev4"]
+[ext_resource type="TileSet" uid="uid://ct0xxnbnahj6a" path="res://Antonys_funny_tileset.tres" id="6_4ukck"]
+[ext_resource type="Texture2D" uid="uid://bb6gy5xt65qrd" path="res://resources/assets/environment/trees/tree2.png" id="7_knowr"]
+[ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="8_0fjss"]
+[ext_resource type="Texture2D" uid="uid://cqqc742k0xwhg" path="res://resources/assets/environment/mushrooms/redSmallMushroom.png" id="9_1hmnn"]
+[ext_resource type="Texture2D" uid="uid://bkbyhmlfxbml6" path="res://resources/assets/environment/mushrooms/blueSmallMushroom.png" id="10_dd75b"]
+[ext_resource type="Texture2D" uid="uid://dsxmfpr0jjfvs" path="res://resources/assets/environment/mushrooms/redMediumMushroom.png" id="11_680vv"]
+[ext_resource type="Texture2D" uid="uid://dkqx6yabb6h7l" path="res://resources/assets/environment/mushrooms/redLargeMushroom.png" id="12_q61hd"]
+[ext_resource type="Texture2D" uid="uid://tyqegqpnr77y" path="res://resources/assets/environment/mushrooms/blueMediumMushroom.png" id="13_vegku"]
+[ext_resource type="Script" path="res://levels/level3/custom_Endzone.gd" id="14_n3wkc"]
+[ext_resource type="Texture2D" uid="uid://ceefse0svrnd2" path="res://resources/assets/environment/misc/vortex.png" id="15_n87hj"]
+[ext_resource type="PackedScene" uid="uid://dhacemmrpk6" path="res://backend/loader/load_zones/Fallzone.tscn" id="16_6r45n"]
+[ext_resource type="PackedScene" uid="uid://cg2xsc7ovtljx" path="res://scenes/enemies/shroomite/red/redShroomite.tscn" id="17_st5wl"]
+[ext_resource type="PackedScene" uid="uid://djxvnkpd8su55" path="res://scenes/enemies/shroomite/blue/blueShroomite.tscn" id="18_upha0"]
+[ext_resource type="PackedScene" uid="uid://bc21le3lhi7b7" path="res://scenes/collectables/item/item.tscn" id="19_yg68n"]
 
 [sub_resource type="Gradient" id="3"]
 offsets = PackedFloat32Array(0, 0.989362)
@@ -28,19 +28,19 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("3")
 
 [sub_resource type="AtlasTexture" id="5"]
-atlas = ExtResource("15")
+atlas = ExtResource("15_n87hj")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="6"]
-atlas = ExtResource("15")
+atlas = ExtResource("15_n87hj")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="7"]
-atlas = ExtResource("15")
+atlas = ExtResource("15_n87hj")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="8"]
-atlas = ExtResource("15")
+atlas = ExtResource("15_n87hj")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="9"]
@@ -67,25 +67,25 @@ animations = [{
 size = Vector2(112, 92)
 
 [node name="rootNode" type="Node2D"]
-script = ExtResource("12")
+script = ExtResource("1_ub8dg")
 
-[node name="Player" parent="." instance=ExtResource("4")]
+[node name="Player" parent="." instance=ExtResource("2_7fuak")]
 position = Vector2(1934, -496)
 
-[node name="Light" parent="Player" instance=ExtResource("13")]
+[node name="Light" parent="Player" instance=ExtResource("3_6w6c7")]
 scale = Vector2(1, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-script = ExtResource("2")
+script = ExtResource("4_twulh")
 
 [node name="BlackBackground" type="Sprite2D" parent="."]
 z_index = -4096
 z_as_relative = false
-position = Vector2(660, -495)
+position = Vector2(2271, -461)
 scale = Vector2(50, 100000)
 texture = SubResource("4")
 
-[node name="Endzone" parent="." instance=ExtResource("3")]
+[node name="Endzone" parent="." instance=ExtResource("5_6rev4")]
 position = Vector2(3290, 237)
 
 [node name="test" type="Sprite2D" parent="."]
@@ -94,8 +94,8 @@ scale = Vector2(9.04395, 8370)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AABFACIACQAAAAAAAwBGACIACQAAAAAAAwBHACIACQAAAAAAAwBIACIACQAAAAAAAwBJACIACQAAAAAAAwBKACIACQAAAAAAAwA+ADAAAgAAAAAAAAA/ADAAAgAAAAAAAABAADAAAgAAAAAAAABBADAAAgAAAAAAAABCADAAAgAAAAAAAABDADAAAgAAAAAAAAAvAC8ACAAAAAAAAAAwAC8ACAAAAAAAAAAxAC8ACAAAAAAAAAAyAC8ACAAAAAAAAAAzAC8ACAAAAAAAAAA0AC8ACAAAAAAAAAA1AC8ACAAAAAAAAAA2AC8ACAAAAAAAAAA3AC8ACAAAAAAAAAA4AC8ACAAAAAAAAAA5AC8ACAAAAAAAAAARAC8ACAAAAAAAAAASAC8ACAAAAAAAAAATAC8ACAAAAAAAAAAUAC8ACAAAAAAAAAAVAC8ACAAAAAAAAAAWAC8ACAAAAAAAAAAXAC8ACAAAAAAAAAAYAC8ACAAAAAAAAAAZAC8ACAAAAAAAAAAbAC8AAgAAAAAAAAAcAC8AAgAAAAAAAAAdAC8AAgAAAAAAAAAeAC8AAgAAAAAAAAAfAC8AAgAAAAAAAAAgAC8AAgAAAAAAAAAhAC8AAgAAAAAAAAAiAC8AAgAAAAAAAAAjAC8AAgAAAAAAAAAkAC8AAgAAAAAAAAAlAC8AAgAAAAAAAAAmAC8AAgAAAAAAAAAnAC8AAgAAAAAAAAAoAC8AAgAAAAAAAAApAC8AAgAAAAAAAAAqAC8AAgAAAAAAAAArAC8AAgAAAAAAAABPACwACQAAAAAAAABQACwACQAAAAAAAABRACwACQAAAAAAAABSACwACQAAAAAAAABTACwACQAAAAAAAABSACIACQAAAAIAAgBSACMACQAAAAIAAgBSACQACQAAAAIAAgBSACUACQAAAAIAAgBSACYACQAAAAIAAgBWAC8ACQAAAAIAAABXAC8ACQAAAAIAAABYAC8ACQAAAAIAAABZAC8ACQAAAAIAAABaAC8ACQAAAAIAAABdADIACQAAAAIAAABeADIACQAAAAIAAABfADIACQAAAAIAAABgADIACQAAAAIAAABkADMACAAAAAAAAABlADMACAAAAAAAAABmADMACAAAAAAAAABqADEACAAAAAAAAABrADEACAAAAAAAAABsADEACAAAAAAAAABtADEACAAAAAAAAABuADEACAAAAAAAAABvADEACAAAAAAAAABwADEACAAAAAAAAABxADEACAAAAAAAAAByADEACAAAAAAAAABzADEACAAAAAAAAAB0ADEACAAAAAAAAAB4ADIACAAAAAAAAAB5ADIACAAAAAAAAAB6ADIACAAAAAAAAAB7ADIACAAAAAAAAAB/ADEACAAAAAAAAACAADEACAAAAAAAAACBADEACAAAAAAAAACCADEACAAAAAAAAACDADEACAAAAAAAAACEADEACAAAAAAAAACFADEACAAAAAAAAACGADEACAAAAAAAAACHADEACAAAAAAAAACIADEACAAAAAAAAACJADEACAAAAAAAAACKADEACAAAAAAAAACLADEACAAAAAAAAACMADEACAAAAAAAAACNADEACAAAAAAAAACOADEACAAAAAAAAACPADEACAAAAAAAAACQADEACAAAAAAAAACRADEACAAAAAAAAACSADEACAAAAAAAAACTADEACAAAAAAAAACUADEACAAAAAAAAACVADEACAAAAAAAAACWADEACAAAAAAAAACXADEACAAAAAAAAACYADEACAAAAAAAAACZADEACAAAAAAAAACaADEACAAAAAAAAACbADEACAAAAAAAAACPACsACAAAAAAAAACQACsACAAAAAAAAACRACsACAAAAAAAAACSACsACAAAAAAAAACGACoACAAAAAAAAACHACoACAAAAAAAAACIACoACAAAAAAAAACQACUACAAAAAAAAACRACUACAAAAAAAAACSACUACAAAAAAAAACGACYACAAAAAAAAACHACYACAAAAAAAAACIACYACAAAAAAAAACJACYACAAAAAAAAACTAB4ACAAAAAAAAACUAB4ACAAAAAAAAACVAB4ACAAAAAAAAACSAB4ACAAAAAAAAACHABcACAAAAAAAAACIABcACAAAAAAAAACJABcACAAAAAAAAACKABcACAAAAAAAAACLABcACAAAAAAAAACaABQACAAAAAAAAACbABQACAAAAAAAAACcABQACAAAAAAAAACPABEACAAAAAAAAACQABEACAAAAAAAAACRABEACAAAAAAAAACSABEACAAAAAAAAACBAC0ACAAAAAAAAACCAC0ACAAAAAAAAAB+ACoACAAAAAAAAAB/ACoACAAAAAAAAAB8ACYACAAAAAAAAAB9ACYACAAAAAAAAACCACYACAAAAAAAAACDACYACAAAAAAAAACEACYACAAAAAAAAACFACYACAAAAAAAAACPACUACAAAAAAAAACOACUACAAAAAAAAACNACUACAAAAAAAAACMACUACAAAAAAAAACVACQACAAAAAAAAACWACQACAAAAAAAAACZACIACAAAAAAAAACaACIACAAAAAAAAACcAB8ACAAAAAAAAACdAB8ACAAAAAAAAACWAB4ACAAAAAAAAACXAB4ACAAAAAAAAACPABsACAAAAAAAAACQABsACAAAAAAAAACNABkACAAAAAAAAACMABkACAAAAAAAAACFABUACAAAAAAAAACGABUACAAAAAAAAACDABMACAAAAAAAAACEABMACAAAAAAAAACBABEACAAAAAAAAACCABEACAAAAAAAAACHABEACAAAAAAAAACIABEACAAAAAAAAACJABEACAAAAAAAAACKABEACAAAAAAAAACLABEACAAAAAAAAACMABEACAAAAAAAAACNABEACAAAAAAAAACOABEACAAAAAAAAACGABEACAAAAAAAAABHAC4ACQAAAAAAAABIAC4ACQAAAAAAAABJAC4ACQAAAAAAAABKAC4ACQAAAAAAAABLAC4ACQAAAAAAAABMAC4ACQAAAAAAAABNAC4ACQAAAAAAAAA=")
-tile_set = ExtResource("6")
+tile_map_data = PackedByteArray("AABFACIACQAAAAAAAwBGACIACQAAAAAAAwBHACIACQAAAAAAAwBIACIACQAAAAAAAwBJACIACQAAAAAAAwBKACIACQAAAAAAAwA+ADAAAgAAAAAAAAA/ADAAAgAAAAAAAABAADAAAgAAAAAAAABBADAAAgAAAAAAAABCADAAAgAAAAAAAABDADAAAgAAAAAAAAAvAC8ACAAAAAAAAAAwAC8ACAAAAAAAAAAxAC8ACAAAAAAAAAAyAC8ACAAAAAAAAAAzAC8ACAAAAAAAAAA0AC8ACAAAAAAAAAA1AC8ACAAAAAAAAAA2AC8ACAAAAAAAAAA3AC8ACAAAAAAAAAA4AC8ACAAAAAAAAAA5AC8ACAAAAAAAAAARAC8ACAAAAAAAAAASAC8ACAAAAAAAAAATAC8ACAAAAAAAAAAUAC8ACAAAAAAAAAAVAC8ACAAAAAAAAAAWAC8ACAAAAAAAAAAXAC8ACAAAAAAAAAAYAC8ACAAAAAAAAAAZAC8ACAAAAAAAAAAbAC8AAgAAAAAAAAAcAC8AAgAAAAAAAAAdAC8AAgAAAAAAAAAeAC8AAgAAAAAAAAAfAC8AAgAAAAAAAAAgAC8AAgAAAAAAAAAhAC8AAgAAAAAAAAAiAC8AAgAAAAAAAAAjAC8AAgAAAAAAAAAkAC8AAgAAAAAAAAAlAC8AAgAAAAAAAAAmAC8AAgAAAAAAAAAnAC8AAgAAAAAAAAAoAC8AAgAAAAAAAAApAC8AAgAAAAAAAAAqAC8AAgAAAAAAAAArAC8AAgAAAAAAAABPACwACQAAAAAAAABQACwACQAAAAAAAABRACwACQAAAAAAAABSACwACQAAAAAAAABTACwACQAAAAAAAABSACIACQAAAAIAAgBSACMACQAAAAIAAgBSACQACQAAAAIAAgBSACUACQAAAAIAAgBSACYACQAAAAIAAgBWAC8ACQAAAAIAAABXAC8ACQAAAAIAAABYAC8ACQAAAAIAAABZAC8ACQAAAAIAAABaAC8ACQAAAAIAAABdADIACQAAAAIAAABeADIACQAAAAIAAABfADIACQAAAAIAAABgADIACQAAAAIAAABkADMACAAAAAAAAABlADMACAAAAAAAAABmADMACAAAAAAAAABqADEACAAAAAAAAABrADEACAAAAAAAAABsADEACAAAAAAAAABtADEACAAAAAAAAABuADEACAAAAAAAAABvADEACAAAAAAAAABwADEACAAAAAAAAABxADEACAAAAAAAAAByADEACAAAAAAAAABzADEACAAAAAAAAAB0ADEACAAAAAAAAAB4ADIACAAAAAAAAAB5ADIACAAAAAAAAAB6ADIACAAAAAAAAAB7ADIACAAAAAAAAAB/ADEACAAAAAAAAACAADEACAAAAAAAAACBADEACAAAAAAAAACCADEACAAAAAAAAACDADEACAAAAAAAAACEADEACAAAAAAAAACFADEACAAAAAAAAACGADEACAAAAAAAAACHADEACAAAAAAAAACIADEACAAAAAAAAACJADEACAAAAAAAAACKADEACAAAAAAAAACLADEACAAAAAAAAACMADEACAAAAAAAAACNADEACAAAAAAAAACOADEACAAAAAAAAACPADEACAAAAAAAAACQADEACAAAAAAAAACRADEACAAAAAAAAACSADEACAAAAAAAAACTADEACAAAAAAAAACUADEACAAAAAAAAACVADEACAAAAAAAAACWADEACAAAAAAAAACXADEACAAAAAAAAACYADEACAAAAAAAAACZADEACAAAAAAAAACaADEACAAAAAAAAACbADEACAAAAAAAAACPACsACAAAAAAAAACQACsACAAAAAAAAACRACsACAAAAAAAAACSACsACAAAAAAAAACGACoACAAAAAAAAACHACoACAAAAAAAAACIACoACAAAAAAAAACQACUACAAAAAAAAACRACUACAAAAAAAAACSACUACAAAAAAAAACGACYACAAAAAAAAACHACYACAAAAAAAAACIACYACAAAAAAAAACJACYACAAAAAAAAACTAB4ACAAAAAAAAACUAB4ACAAAAAAAAACVAB4ACAAAAAAAAACSAB4ACAAAAAAAAACHABcACAAAAAAAAACIABcACAAAAAAAAACJABcACAAAAAAAAACKABcACAAAAAAAAACLABcACAAAAAAAAACaABQACAAAAAAAAACbABQACAAAAAAAAACcABQACAAAAAAAAACPABEACAAAAAAAAACQABEACAAAAAAAAACRABEACAAAAAAAAACSABEACAAAAAAAAACBAC0ACAAAAAAAAACCAC0ACAAAAAAAAAB+ACoACAAAAAAAAAB/ACoACAAAAAAAAAB8ACYACAAAAAAAAAB9ACYACAAAAAAAAACCACYACAAAAAAAAACDACYACAAAAAAAAACEACYACAAAAAAAAACFACYACAAAAAAAAACPACUACAAAAAAAAACOACUACAAAAAAAAACNACUACAAAAAAAAACMACUACAAAAAAAAACVACQACAAAAAAAAACWACQACAAAAAAAAACZACIACAAAAAAAAACaACIACAAAAAAAAACcAB8ACAAAAAAAAACdAB8ACAAAAAAAAACWAB4ACAAAAAAAAACXAB4ACAAAAAAAAACPABsACAAAAAAAAACQABsACAAAAAAAAACNABkACAAAAAAAAACMABkACAAAAAAAAACFABUACAAAAAAAAACGABUACAAAAAAAAACDABMACAAAAAAAAACEABMACAAAAAAAAACBABEACAAAAAAAAACCABEACAAAAAAAAACHABEACAAAAAAAAACIABEACAAAAAAAAACJABEACAAAAAAAAACKABEACAAAAAAAAACLABEACAAAAAAAAACMABEACAAAAAAAAACNABEACAAAAAAAAACOABEACAAAAAAAAACGABEACAAAAAAAAABHAC4ACQAAAAAAAABIAC4ACQAAAAAAAABJAC4ACQAAAAAAAABKAC4ACQAAAAAAAABLAC4ACQAAAAAAAABMAC4ACQAAAAAAAABNAC4ACQAAAAAAAAAaAC8AAgAAAAAAAAAQAC8AAgAAAAAAAAAPAC8AAgAAAAAAAAAOAC8AAgAAAAAAAAANAC8AAgAAAAAAAAAMAC8AAgAAAAAAAAALAC8AAgAAAAAAAAAKAC8AAgAAAAAAAAAJAC8AAgAAAAAAAAAIAC8AAgAAAAAAAAAHAC8AAgAAAAAAAAAGAC8AAgAAAAAAAAAFAC8AAgAAAAAAAAAEAC8AAgAAAAAAAAADAC8AAgAAAAAAAAACAC8AAgAAAAAAAAABAC8AAgAAAAAAAAAAAC8AAgAAAAAAAAD//y8AAgAAAAAAAAD+/y8AAgAAAAAAAAD9/y8AAgAAAAAAAAD8/y8AAgAAAAAAAAD7/y8AAgAAAAAAAAD6/y8AAgAAAAAAAAD5/y8AAgAAAAAAAAAsAC8AAgAAAAAAAAAtAC8AAgAAAAAAAAAuAC8AAgAAAAAAAAA6AC8AAgAAAAAAAAA7AC8AAgAAAAAAAAA8AC8AAgAAAAAAAAA9AC8AAgAAAAAAAABEAC8AAgAAAAAAAABFAC8AAgAAAAAAAABGAC8AAgAAAAAAAABOAC0AAgAAAAAAAABUAC0AAgAAAAAAAABVAC4AAgAAAAAAAABbADAAAgAAAAAAAABcADEAAgAAAAAAAABhADMAAgAAAAAAAABiADMAAgAAAAAAAABjADMAAgAAAAAAAABnADIAAgAAAAAAAABoADIAAgAAAAAAAABpADIAAgAAAAAAAAB1ADIAAgAAAAAAAAB2ADIAAgAAAAAAAAB3ADIAAgAAAAAAAAB8ADIAAgAAAAAAAAB9ADIAAgAAAAAAAAB+ADIAAgAAAAAAAACcADEAAgAAAAAAAACdADEAAgAAAAAAAACeADEAAgAAAAAAAACfADEAAgAAAAAAAACgADEAAgAAAAAAAAChADEAAgAAAAAAAACiADEAAgAAAAAAAACjADEAAgAAAAAAAACkADEAAgAAAAAAAAClADEAAgAAAAAAAACmADEAAgAAAAAAAACnADEAAgAAAAAAAACoADEAAgAAAAAAAACpADEAAgAAAAAAAACqADEAAgAAAAAAAACrADEAAgAAAAAAAACsADEAAgAAAAAAAACtADEAAgAAAAAAAACuADEAAgAAAAAAAACvADEAAgAAAAAAAACwADEAAgAAAAAAAACxADEAAgAAAAAAAACyADEAAgAAAAAAAACzADEAAgAAAAAAAAC0ADEAAgAAAAAAAAC1ADEAAgAAAAAAAAD4/y8AAgAAAAAAAAD3/y8AAgAAAAAAAAD2/y8AAgAAAAAAAAD1/y8AAgAAAAAAAAD0/y8AAgAAAAAAAADz/y8AAgAAAAAAAADy/y8AAgAAAAAAAADx/y8AAgAAAAAAAADw/y8AAgAAAAAAAADv/y8AAgAAAAAAAADu/y8AAgAAAAAAAADt/y8AAgAAAAAAAADs/y8AAgAAAAAAAADr/y8AAgAAAAAAAADq/y8AAgAAAAAAAAA=")
+tile_set = ExtResource("6_4ukck")
 
 [node name="Trees" type="Node" parent="Layer0"]
 
@@ -105,7 +105,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(7006, 2892)
 scale = Vector2(3, 3)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Trees/Orangetree1"]
 position = Vector2(3.33322, -29.3333)
@@ -113,7 +113,8 @@ color = Color(1, 0.588235, 0.00392157, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Redtree3" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(1, 0, 0.211765, 1)
@@ -121,7 +122,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(9256, 2047)
 scale = Vector2(18, 20)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree3"]
 position = Vector2(3.33322, -29.3333)
@@ -129,15 +130,16 @@ color = Color(1, 0.00392157, 0.00392157, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Redtree2" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(1, 0, 0.211765, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(3350, 2766)
+position = Vector2(3138, 2776)
 scale = Vector2(3, 3)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree2"]
 position = Vector2(3.33322, -29.3333)
@@ -145,7 +147,8 @@ color = Color(1, 0.00392157, 0.00392157, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Redtree1" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(1, 0, 0.211765, 1)
@@ -153,7 +156,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(1434, 2766)
 scale = Vector2(3, 3)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 flip_h = true
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Trees/Redtree1"]
@@ -162,7 +165,8 @@ color = Color(1, 0.00392157, 0.00392157, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Purpletree1" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(1, 0, 0.796078, 1)
@@ -171,7 +175,7 @@ z_index = -1
 position = Vector2(5556, 2390)
 rotation = 1.5708
 scale = Vector2(3, 3)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 
 [node name="Light" type="PointLight2D" parent="Layer0/Trees/Purpletree1"]
 position = Vector2(-4.40002, 22.5331)
@@ -179,7 +183,8 @@ color = Color(1, 0, 0.796078, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Greentree1" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(0.176471, 0.74902, 0.129412, 1)
@@ -187,7 +192,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(4596, 2478)
 scale = Vector2(3, 3)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 flip_v = true
 
 [node name="Light" type="PointLight2D" parent="Layer0/Trees/Greentree1"]
@@ -197,7 +202,8 @@ energy = 2.0
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Bluetree1" type="Sprite2D" parent="Layer0/Trees"]
 modulate = Color(0.392157, 1, 1, 1)
@@ -205,7 +211,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(2156, 2604)
 scale = Vector2(5, 5)
-texture = ExtResource("7")
+texture = ExtResource("7_knowr")
 
 [node name="Light" type="PointLight2D" parent="Layer0/Trees/Bluetree1"]
 position = Vector2(-4.40002, -20.8002)
@@ -213,7 +219,8 @@ color = Color(0, 0.505882, 1, 1)
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="Shrooms" type="Node" parent="Layer0"]
 
@@ -221,9 +228,9 @@ texture = ExtResource("1")
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(3104, 2979)
+position = Vector2(1606, 2987)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall1"]
 position = Vector2(4.00021, -25.9998)
@@ -232,8 +239,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="blueSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0, 0.392157, 1, 1)
@@ -241,7 +249,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(4089, 3040)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9")
+texture = ExtResource("10_dd75b")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall1"]
 position = Vector2(4.00021, -25.9998)
@@ -250,16 +258,17 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redMed1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(3608, 2949)
+position = Vector2(1154, 2948)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11")
+texture = ExtResource("11_680vv")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed1"]
 position = Vector2(4.00021, -25.9998)
@@ -268,8 +277,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redSmall7" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -277,7 +287,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(1280, 2982)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall7"]
 position = Vector2(4.00021, -25.9998)
@@ -286,8 +296,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redSmall2" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -295,7 +306,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8275, 3110)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall2"]
 position = Vector2(4.00021, -25.9998)
@@ -304,8 +315,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redLarge1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -313,7 +325,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8542, 3007)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14")
+texture = ExtResource("12_q61hd")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redLarge1"]
 position = Vector2(4.00021, -25.9998)
@@ -322,8 +334,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redLarge3" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -331,7 +344,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8730, 2237)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14")
+texture = ExtResource("12_q61hd")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redLarge3"]
 position = Vector2(4.00021, -25.9998)
@@ -340,8 +353,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redLarge4" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -349,7 +363,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(9939, 1125)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14")
+texture = ExtResource("12_q61hd")
 flip_h = true
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redLarge4"]
@@ -359,8 +373,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redLarge2" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -368,7 +383,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(9286, 3084)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14")
+texture = ExtResource("12_q61hd")
 flip_h = true
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redLarge2"]
@@ -378,8 +393,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redSmall3" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -387,7 +403,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8695, 2666)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="redSmall4" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -395,7 +411,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(9318, 2344)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="redSmall5" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -403,7 +419,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8787, 1450)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="redSmall6" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -411,7 +427,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(9775, 3110)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall6"]
 position = Vector2(4.00021, -25.9998)
@@ -420,8 +436,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redMed2" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -429,7 +446,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(7790, 3145)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11")
+texture = ExtResource("11_680vv")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed2"]
 position = Vector2(4.00021, -25.9998)
@@ -438,8 +455,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="orangeMed1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.866667, 0.713726, 0.517647, 1)
@@ -447,7 +465,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(6500, 3211)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11")
+texture = ExtResource("11_680vv")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/orangeMed1"]
 position = Vector2(4.00021, -25.9998)
@@ -456,8 +474,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="orangeSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.866667, 0.713726, 0.517647, 1)
@@ -465,7 +484,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(7392, 3113)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/orangeSmall1"]
 position = Vector2(4.00021, -25.9998)
@@ -474,8 +493,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="orangeSmall2" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.866667, 0.713726, 0.517647, 1)
@@ -483,7 +503,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(7095, 3116)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8")
+texture = ExtResource("9_1hmnn")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/orangeSmall2"]
 position = Vector2(4.00021, -25.9998)
@@ -492,8 +512,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="redMed3" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
@@ -501,7 +522,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(8968, 3078)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11")
+texture = ExtResource("11_680vv")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed3"]
 position = Vector2(4.00021, -25.9998)
@@ -510,16 +531,17 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="blueSmall2" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0, 0.392157, 1, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(2403, 2983)
+position = Vector2(3852, 2976)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9")
+texture = ExtResource("10_dd75b")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall2"]
 position = Vector2(4.00021, -25.9998)
@@ -528,16 +550,17 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="blueSmall3" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0, 0.392157, 1, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(1801, 2983)
+position = Vector2(4281, 3044)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9")
+texture = ExtResource("10_dd75b")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueSmall3"]
 position = Vector2(4.00021, -25.9998)
@@ -546,16 +569,17 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="blueMed1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0, 0.392157, 1, 1)
 show_behind_parent = true
 z_index = -1
-position = Vector2(2703, 2951)
+position = Vector2(3938, 2951)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10")
+texture = ExtResource("13_vegku")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/blueMed1"]
 position = Vector2(4.00021, -25.9998)
@@ -564,8 +588,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="greenMed1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.494118, 0.803922, 0.537255, 1)
@@ -573,7 +598,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(4756, 2300)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10")
+texture = ExtResource("13_vegku")
 flip_v = true
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/greenMed1"]
@@ -583,8 +608,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="greenSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.494118, 0.803922, 0.537255, 1)
@@ -592,7 +618,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(5215, 2791)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9")
+texture = ExtResource("10_dd75b")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/greenSmall1"]
 position = Vector2(4.00021, -25.9998)
@@ -601,8 +627,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="purpleMed1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.623529, 0.235294, 0.611765, 1)
@@ -610,7 +637,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(5709, 2952)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("10")
+texture = ExtResource("13_vegku")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/purpleMed1"]
 position = Vector2(4.00021, -25.9998)
@@ -619,8 +646,9 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="purpleSmall1" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.623529, 0.235294, 0.611765, 1)
@@ -628,7 +656,7 @@ show_behind_parent = true
 z_index = -1
 position = Vector2(6050, 3175)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9")
+texture = ExtResource("10_dd75b")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/purpleSmall1"]
 position = Vector2(4.00021, -25.9998)
@@ -637,11 +665,12 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
 [node name="custom_Endzone" type="Area2D" parent="Layer0"]
-script = ExtResource("16")
+script = ExtResource("14_n3wkc")
 
 [node name="Vortex" type="AnimatedSprite2D" parent="Layer0/custom_Endzone"]
 modulate = Color(1, 0.0313726, 0.870588, 1)
@@ -657,20 +686,21 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Layer0/custom_Endzone"]
 position = Vector2(9286, 1018)
 shape = SubResource("10")
 
-[node name="Fallzone" parent="." instance=ExtResource("5")]
+[node name="Fallzone" parent="." instance=ExtResource("16_6r45n")]
 position = Vector2(4061, 3678)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="red1" parent="Enemies" instance=ExtResource("17")]
+[node name="red1" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(1, 0.611765, 0.611765, 1)
-position = Vector2(3494, 2947)
+position = Vector2(1477, 2943)
 
 [node name="Light2" type="PointLight2D" parent="Enemies/red1"]
 position = Vector2(-3.24249e-05, 11)
@@ -679,10 +709,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="red3" parent="Enemies" instance=ExtResource("17")]
+[node name="red3" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(1, 0.611765, 0.611765, 1)
 position = Vector2(8755, 3070)
 
@@ -693,10 +724,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="orange1" parent="Enemies" instance=ExtResource("17")]
+[node name="orange1" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(0.968627, 0.435294, 0.0823529, 1)
 position = Vector2(7180, 3070)
 
@@ -707,10 +739,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="red4" parent="Enemies" instance=ExtResource("17")]
+[node name="red4" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(1, 0.611765, 0.611765, 1)
 position = Vector2(9254, 2688)
 
@@ -721,10 +754,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="red5" parent="Enemies" instance=ExtResource("17")]
+[node name="red5" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(1, 0.611765, 0.611765, 1)
 position = Vector2(9480, 1855)
 
@@ -735,10 +769,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="red2" parent="Enemies" instance=ExtResource("17")]
+[node name="red2" parent="Enemies" instance=ExtResource("17_st5wl")]
 modulate = Color(1, 0.611765, 0.611765, 1)
 position = Vector2(1322, 2947)
 
@@ -749,12 +784,13 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="blue1" parent="Enemies" instance=ExtResource("18")]
+[node name="blue1" parent="Enemies" instance=ExtResource("18_upha0")]
 modulate = Color(0.117647, 0.52549, 1, 1)
-position = Vector2(2532, 2946)
+position = Vector2(4399, 2942)
 
 [node name="Light2" type="PointLight2D" parent="Enemies/blue1"]
 position = Vector2(-3.24249e-05, 11)
@@ -763,10 +799,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="blue2" parent="Enemies" instance=ExtResource("18")]
+[node name="blue2" parent="Enemies" instance=ExtResource("18_upha0")]
 modulate = Color(0.117647, 0.52549, 1, 1)
 position = Vector2(4193, 3006)
 
@@ -777,10 +814,11 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="purple1" parent="Enemies" instance=ExtResource("18")]
+[node name="purple1" parent="Enemies" instance=ExtResource("18_upha0")]
 modulate = Color(1, 0.113725, 0.631373, 1)
 position = Vector2(5607, 2942)
 
@@ -791,9 +829,17 @@ energy = 0.75
 range_z_min = -15
 range_z_max = 15
 shadow_enabled = true
-texture = ExtResource("1")
+texture = ExtResource("8_0fjss")
 texture_scale = 2.0
+metadata/_edit_lock_ = true
 
-[node name="Item" parent="." instance=ExtResource("19_yskvx")]
-position = Vector2(3289, 2948)
+[node name="Item" parent="." instance=ExtResource("19_yg68n")]
+position = Vector2(2227, 2956)
 itemId = "excalibur"
+
+[node name="Item2" parent="." instance=ExtResource("19_yg68n")]
+position = Vector2(3057, 2950)
+itemId = "calamity"
+
+[node name="Item3" parent="." instance=ExtResource("19_yg68n")]
+position = Vector2(2661, 2953)

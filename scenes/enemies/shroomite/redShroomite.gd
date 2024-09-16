@@ -6,7 +6,7 @@ signal player_hit(damage, knockback, attacker)
 
 
 #class_name enemy
-@export var maxHealth = 15
+@export var maxHealth = 20
 var health = maxHealth
 @export var dmg = 6
 @export var def = 0
@@ -18,7 +18,7 @@ var JUMPFORCE = -600
 @onready var jumpTimer = 0
 @export var atkSpeed = 2
 @onready var atkTimer = 0
-var attacked = false
+var is_attacked = false
 var attacking = false
 var faceRight = false
 @onready var playerPOS = GameData.player.position
@@ -85,29 +85,20 @@ var sprite : Node
 
 func _ready():
 	set_physics_process(false)
-	var spritePriority = 0
 	var kids = self.get_children()
 	for i in range(kids.size()):
 		if i >= kids.size(): pass
 		elif defaultChilds.has(kids[i]):
 			kids.pop_at(i)
 			i-=1
-	for kid in kids:
-		if kid.get_class() == "Sprite":
-			if spritePriority < 1:
-				sprite = kid
-				spritePriority = 1
-		elif kid.get_class() == "AnimatedSprite":
-			if spritePriority < 2:
-				sprite = kid
-				spritePriority = 1
+	sprite = $AnimatedSprite
 		
 		
 var hurtCtick = 0;
 var invincible = false
 
 @warning_ignore("unused_parameter")
-func hit(hdmg, knockback):
+func attacked(hdmg, knockback := 0):
 	if not invincible:
 		health -= hdmg
 		if health <= 0:
@@ -130,7 +121,7 @@ func hurtAnim(tick):
 		timeri = Timer.new()
 		timeri.name = "timer1"
 		self.add_child(timeri)
-		$timer1.timeout.disconnect(hurtAnimP)
+		$timer1.timeout.connect(hurtAnimP)
 	if tick > 2:
 		sprite.modulate = Color(1, 1, 1, 1)
 		invincible = false

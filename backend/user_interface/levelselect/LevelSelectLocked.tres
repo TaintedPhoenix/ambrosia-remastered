@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=2]
 
-[ext_resource path="res://Global/Backend/Interface/Monocraft.ttf" type="DynamicFontData" id=1]
+[ext_resource type="DynamicFontData" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="1"]
 
 [sub_resource type="DynamicFont" id=5]
 size = 80
