@@ -13,7 +13,7 @@ func _ready():
 	anchor_right = 0.5
 	anchor_top = 0.5
 	anchor_bottom = 0.5
-	margin_left = -rect_size.x / 2
-	margin_right = -rect_size.x / 2
-	margin_top = -rect_size.y / 2
-	margin_bottom = -rect_size.y / 2
+	offset_left = -size.x / 2
+	offset_right = -size.x / 2
+	offset_top = -size.y / 2
+	offset_bottom = -size.y / 2
