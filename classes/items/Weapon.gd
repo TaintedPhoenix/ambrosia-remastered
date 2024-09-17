@@ -6,12 +6,13 @@ var size : float
 var auto : bool
 var damage : float
 var knockback : float
+var attackScenePath : String
 
-@warning_ignore("shadowed_variable")
-func _init(id := "sword", spritePath :="res://resources/asssets/items/Sword.png", displayName := "Sword", rarity := ItemRarity.COMMON, description := "A simple steel sword", highlightColor := Color(0,0,0,0), speed := 2.5, size := 1.0, auto := false, damage :=8.0, knockback := 0.0) -> void:
-	super(id, spritePath, displayName, rarity, description, highlightColor)
-	self.speed = speed
-	self.size = size
-	self.auto = auto
-	self.damage = damage
-	self.knockback = knockback
+func _init(options : Dictionary = {}) -> void:
+	super(options)
+	speed = options.get("speed") if options.has("speed") else 1.0
+	size = options.get("size") if options.has("size") else 1.0
+	auto = options.get("auto") if options.has("auto") else false
+	damage = options.get("damage") if options.has("damage") else 1.0
+	knockback = options.get("knockback") if options.has("knockback") else 1.0
+	attackScenePath = options.get("attackScenePath") if options.has("attackScenePath") else "res://scenes/weapons/slash/slash.tscn"

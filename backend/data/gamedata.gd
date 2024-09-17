@@ -11,7 +11,15 @@ var player : CharacterBody2D
 @onready var itemsCollected : Array[String] = []
 
 var equippedWeapon = null
-var fists = Weapon.new("punch", "res://resources/assets/none.png", "Fists", ItemRarity.UNOBTAINABLE, "Your fists, what more is there to say", Color(0,0,0,0), 2.0, 3.0, 0.25, 0.25, "punch")
+var fists = Weapon.new({
+	"id" : "punch",
+	"displayName" : "Fists",
+	"description" : "Your fists, what more is there to say",
+	"damage" : 3.0,
+	"speed" : 2.0,
+	"knockback" : 0.25,
+	"attackScene" : "res://scenes/weapons/punch/punch.tscn"
+})
 
 func setPlayer(node : CharacterBody2D):
 	player = node
