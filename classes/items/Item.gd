@@ -10,6 +10,9 @@ var highlightColor : Color
 func get_sprite() -> CompressedTexture2D:
 	return load(spritePath)
 
+static func isNull(i : ItemLike) -> bool:
+	return i.id == "null"
+
 @warning_ignore("shadowed_variable")
 func _init(options : Dictionary = {}) -> void:
 	super(options)

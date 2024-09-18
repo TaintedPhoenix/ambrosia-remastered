@@ -14,6 +14,12 @@ static var EPIC := ItemRarity.new("epic", Color("#75278c"), 8)
 static var LEGENDARY := ItemRarity.new("legendary", Color("#ed8b2f"), 16)
 static var MYTHICAL := ItemRarity.new("mythical", Color("#ed2f2f"), 32)
 
+static func compare(a : ItemRarity, b : ItemRarity) -> int:
+	if (a.value > b.value): return 1;
+	elif (b.value > a.value): return -1;
+	elif (a.value == b.value): return 0;
+	else: return 0
+
 @warning_ignore("shadowed_variable")
 func _init(name : String, color : Color, value : int) -> void:
 	self.name = name
