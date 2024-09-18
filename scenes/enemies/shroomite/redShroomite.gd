@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal player_hit(damage, knockback, attacker)
+signal dead(node)
 #Variables for compatibility with player attackstate
 
 
@@ -72,7 +73,7 @@ func _on_Area2Datk_body_entered(body):
 		playerInRange = true
 		var pt : NodePath = body.get_path()
 		player_hit.connect(get_node(pt).attacked)
-		emit_signal("player_hit", dmg, 0, self.get_path())
+		emit_signal("player_hit", dmg, 0, self)
 		player_hit.disconnect(get_node(pt).attacked)
 		timeSinceLastHit = 0
 
@@ -114,6 +115,9 @@ func hurtAnimP():
 	hurtCtick += 1
 	hurtAnim(hurtCtick)
 	
+func _exit_tree() -> void:
+	dead.emit(self)
+	
 func hurtAnim(tick):
 	var timeri
 	if tick == 0:
@@ -142,6 +146,6 @@ func _process(delta):
 		if $Area2Datk.overlaps_body(GameData.player):
 			var pt : NodePath = GameData.player.get_path()
 			player_hit.connect(get_node(pt).attacked)
-			emit_signal("player_hit", dmg, 0, self.get_path())
+			emit_signal("player_hit", dmg, 0, self)
 			player_hit.disconnect(get_node(pt).attacked)
 			timeSinceLastHit = 0

@@ -1,5 +1,5 @@
 
-class_name Weapon extends Item
+class_name Weapon extends Equippable
 
 var speed : float
 var size : float

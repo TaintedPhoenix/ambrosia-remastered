@@ -47,5 +47,14 @@ var items : Array[Item] = [
 		"damage" : 45.0,
 		"knockback" : 1.5,
 		"speed" : 2.0,
+	}),
+	AbilityItem.new({
+		"id" : "redshard",
+		"spritePath" : "res://resources/assets/items/trinkets/tile_2_0.png",
+		"displayName" : "Red Shard",
+		"rarity" : ItemRarity.RARE,
+		"description" : "A pure red shard of some type of gem. You feel especially light when holding it",
+		"ability" : Ability.new({"id" : "doublejump"}),
+		"highlightColor" : Color("#f5002d")
 	})
 ]

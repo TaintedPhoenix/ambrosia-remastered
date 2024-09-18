@@ -12,7 +12,7 @@ var tooltip
 
 func _ready():
 	
-	if item is Weapon:
+	if item is Equippable:
 		$Button.disabled = false
 		$Button.pressed.connect(clicked)
 	tooltip = ToolTip.instantiate()

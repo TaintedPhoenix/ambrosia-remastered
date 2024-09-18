@@ -124,4 +124,9 @@ vertical_alignment = 1
 offset_top = 105.0
 offset_bottom = 265.0
 
+[node name="EquipmentSlot2" parent="Inventory/Panel/Equipment" instance=ExtResource("5_71y4u")]
+offset_top = 280.0
+offset_bottom = 440.0
+category = "Ability"
+
 [node name="Tooltips" type="CanvasLayer" parent="."]

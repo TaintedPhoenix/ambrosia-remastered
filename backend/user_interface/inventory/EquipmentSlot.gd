@@ -12,12 +12,12 @@ func _ready() -> void:
 
 func setItem(newItem : Item):
 	$ItemName.text = newItem.displayName
-	$ItemName.label_settings.font_color = newItem.rarity.color
+	$ItemName.add_theme_color_override("font_color", newItem.rarity.color)
 	$ItemFrame.setItem(newItem)
 
 func clearItem():
 	$ItemFrame.clearItem()
-	$ItemName.label_settings.font_color = Color("#f0f0f0")
+	$ItemName.add_theme_color_override("font_color", Color(1,1,1))
 	$ItemName.text = "None"
 	
 func unequip():
