@@ -11,6 +11,8 @@ var player : CharacterBody2D
 @onready var itemsCollected : Array[String] = []
 @onready var tempItems : Array[ItemLike] = []
 
+@onready var openedChests : Array[String] = []
+
 var equippedWeapon = null
 var equippedTrinket = null
 var fists = Weapon.new({
@@ -58,6 +60,13 @@ func collectItem(item : Item):
 		itemsCollected.append(item.id)
 		inventory.append(item)
 		inventoryChanged.emit()
+		
+func saveItem(item : Item):
+	if not item.id in itemsCollected:
+		itemsCollected.append(item.id)
+		inventory.append(item)
+		inventoryChanged.emit()
+
 func isPlayer(node):
 	return (node == player)
 

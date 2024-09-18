@@ -7,7 +7,10 @@ signal inrange(item : Item)
 var item  = null
 var highlight : Texture2D
 
+var isChest := false
+
 func init(i : Item):
+	isChest = true
 	item = i
 
 func _ready() -> void:
@@ -25,7 +28,10 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
-		GameData.collectItem(item)
+		if not isChest:
+			GameData.collectItem(item)
+		else:
+			GameData.saveItem(item)
 		queue_free()
 	
 func entered(body : Node) -> void:

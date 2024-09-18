@@ -1,27 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc45cd2qbysis"]
+[gd_scene load_steps=9 format=3 uid="uid://cc45cd2qbysis"]
 
 [ext_resource type="Script" path="res://scenes/environment/chest.gd" id="1_vs8sm"]
-[ext_resource type="Texture2D" uid="uid://c7a56sg34n6ql" path="res://resources/assets/environment/ChestOpen.png" id="2_2gx0k"]
+[ext_resource type="Shader" path="res://resources/shaders/uncolored_item.gdshader" id="2_5b2jt"]
+[ext_resource type="Texture2D" uid="uid://dajnvpdvxgmty" path="res://resources/assets/environment/ChestClosed.png" id="2_m1ln5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_74sq4"]
+shader = ExtResource("2_5b2jt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utkic"]
 size = Vector2(76, 46)
 
+[sub_resource type="Animation" id="Animation_coes8"]
+resource_name = "shake"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-6, 2), Vector2(0, 0), Vector2(6, -2), Vector2(0, 0), Vector2(-6, 2), Vector2(0, 0), Vector2(6, -2), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oxwfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_31mpg"]
+_data = {
+"RESET": SubResource("Animation_oxwfk"),
+"shake": SubResource("Animation_coes8")
+}
+
 [node name="chest" type="Node2D"]
+z_index = -1
 script = ExtResource("1_vs8sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_74sq4")
-position = Vector2(0, -8)
-scale = Vector2(2, 2)
-texture = ExtResource("2_2gx0k")
+scale = Vector2(3, 3)
+texture = ExtResource("2_m1ln5")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -5)
+position = Vector2(0, -7)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_utkic")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_31mpg")
+}
