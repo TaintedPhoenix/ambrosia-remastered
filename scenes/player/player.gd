@@ -126,14 +126,7 @@ func attackState():
 	$AnimatedSprite2D.speed_scale = spriteSpeed
 	set_process(true)
 	$AnimatedSprite2D.stop()
-	if Input.is_action_just_pressed("primary_attack") or Input.is_action_just_pressed("secondary_attack"):
-		var direction := Input.get_axis("move_left", "move_right")
-		if direction==-1:
-			$AnimatedSprite2D.flip_h = true
-		elif direction==1:
-			$AnimatedSprite2D.flip_h = false
-		attackState()
-	elif Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_up") or Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		state = "move"
 		moveState()
 	else:

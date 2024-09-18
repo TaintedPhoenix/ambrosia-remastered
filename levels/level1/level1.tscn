@@ -38,6 +38,9 @@ position = Vector2(6365, -32)
 
 [node name="chest" parent="." instance=ExtResource("6_6hl8i")]
 position = Vector2(4081, -2139)
+itemIds = {
+"bloody_cleaver": 0.25
+}
 chestId = "1-1"
 
 [node name="Layer0" type="TileMapLayer" parent="."]

@@ -9,6 +9,7 @@ signal game_exited
 
 var currentLevel : int = 1
 var maxLevel : int = 1
+var loading : bool = false
 
 func _ready() -> void:
 	for kid in $"..".get_children():
@@ -16,19 +17,23 @@ func _ready() -> void:
 			kid.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 
 func loadLevel(id : int) -> void: #Will take a level ID (ex. 5) and load the associated level
+	loading = true
 	call_deferred("cs", "res://levels/level%s/level%s.tscn" % [str(id), str(id)])
 	UI.state = "game"
 	main_scene_changed.emit()
 	
 func cs(filename : String):
 	get_tree().change_scene_to_file(filename)
+	loading = false
 	
 func resetScene() -> void:
+	loading = true
 	call_deferred("rs")
 
 func rs():
 	get_tree().reload_current_scene()
 	scene_reset.emit()
+	loading = false
 
 func nextLevel() -> void:
 	if currentLevel <= maxLevel:
@@ -36,6 +41,7 @@ func nextLevel() -> void:
 		level_complete.emit()
 	
 func loadScenePath(path : String) -> void:
+	loading = true
 	call_deferred("cs", path)
 	UI.state = "other"
 	main_scene_changed.emit()
