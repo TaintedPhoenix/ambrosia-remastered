@@ -25,6 +25,12 @@ var fists = Weapon.new({
 	"attackScene" : "res://scenes/weapons/punch/punch.tscn"
 })
 
+func resetGame() -> void:
+	inventory = []
+	itemsCollected = []
+	tempItems = []
+	openedChests = []
+
 func _ready() -> void:
 	Loader.game_exited.connect(trash_new_items)
 	Loader.scene_reset.connect(trash_new_items)

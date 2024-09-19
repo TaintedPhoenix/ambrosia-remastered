@@ -38,7 +38,7 @@ func spawnItem():
 	$AnimationPlayer.play("shake")
 	await $AnimationPlayer.animation_finished
 	open()
-	var toSpawn 
+	var toSpawn = null
 	var totalWeight = 0
 	for i in items:
 		if not GameData.itemsCollected.has(i[0].id):
@@ -47,8 +47,9 @@ func spawnItem():
 	for i in items:
 		if not GameData.itemsCollected.has(i[0].id):
 			r-=i[1]
-			if r <= 0:
+			if r <= 0 and toSpawn == null :
 				toSpawn = i[0]
+				break
 	var its = load("res://scenes/collectables/item/item.tscn").instantiate()
 	its.name = "ChestItem" + str(chestId)
 	its.init(toSpawn)

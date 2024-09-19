@@ -4,8 +4,9 @@ extends CharacterBody2D
 const SPEED = 350.0
 const JUMP_VELOCITY = -600.0
 const spriteSpeed = 2.5
-var maxHealth = 100.0
-var health = maxHealth
+var maxHealth : float = 100.0
+var bonusHealth : float = 0.0
+var health = maxHealth + bonusHealth
 
 var state = "idle"
 

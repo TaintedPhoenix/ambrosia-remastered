@@ -56,5 +56,23 @@ var items : Array[Item] = [
 		"description" : "A pure red shard of some type of gem. You feel especially light when holding it",
 		"ability" : Ability.new({"id" : "doublejump"}),
 		"highlightColor" : Color("#f5002d")
+	}),
+	AbilityItem.new({
+		"id" : "redtopaz",
+		"spritePath" : "res://resources/assets/items/trinkets/tile_0_0.png",
+		"displayName" : "Red Topaz",
+		"rarity" : ItemRarity.UNCOMMON,
+		"description" : "A pure red gem. You feel a bit tougher while holding it",
+		"ability" : HealthAbility.new({"id" : "bonushealth", "amount" : 20}),
+		"highlightColor" : Color("#f5002d")
+	}),
+	AbilityItem.new({
+		"id" : "deepredtopaz",
+		"spritePath" : "res://resources/assets/items/trinkets/tile_0_4.png",
+		"displayName" : "Deep Red Topaz",
+		"rarity" : ItemRarity.EPIC,
+		"description" : "A deep red gem. You feel much tougher while holding it",
+		"ability" : HealthAbility.new({"id" : "bonushealth", "amount" : 60}),
+		"highlightColor" : Color("#ff0d0d")
 	})
 ]

@@ -24,7 +24,7 @@
 script = ExtResource("1_g7rbg")
 
 [node name="Player" parent="." instance=ExtResource("2_w8ven")]
-position = Vector2(1317, -382)
+position = Vector2(1328, -382)
 
 [node name="Light" parent="Player" instance=ExtResource("3_63s5i")]
 scale = Vector2(1, 1)
@@ -42,6 +42,14 @@ itemIds = {
 "bloody_cleaver": 0.25
 }
 chestId = "1-1"
+
+[node name="chest2" parent="." instance=ExtResource("6_6hl8i")]
+position = Vector2(897, -699)
+itemIds = {
+"deepredtopaz": 0.05,
+"redtopaz": 0.95
+}
+chestId = "1-2"
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true

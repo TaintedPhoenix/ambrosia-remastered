@@ -5,6 +5,8 @@ extends Control
 
 func _ready() -> void:
 	$Type.text = category
+	if category == "Ability":
+		$ItemFrame/TextureRect.texture = load("res://resources/assets/misc/icon_gem.png")
 	var eq = GameData.getEquippedItem(category)
 	if eq != null:
 		setItem(eq)
