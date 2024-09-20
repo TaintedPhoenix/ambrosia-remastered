@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://i2mteg104yvt"]
+
+[ext_resource type="Texture2D" uid="uid://ckp0mmkhg7miw" path="res://resources/assets/user_interface/HeartOutline.png" id="1_vaih2"]
+[ext_resource type="Texture2D" uid="uid://11nok7knsf3l" path="res://resources/assets/user_interface/Hearts.png" id="2_yj1e5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po8bj"]
+atlas = ExtResource("2_yj1e5")
+region = Rect2(48, 16, 16, 16)
+
+[node name="TextureRect2" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vaih2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_po8bj")
