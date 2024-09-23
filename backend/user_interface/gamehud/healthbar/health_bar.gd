@@ -16,6 +16,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$TextureRect.modulate = Color.from_hsv(0, 0.0, 0.0)
-	health -= 20 * delta
+	$TextureRect.modulate = Color.from_ok_hsl(0.0, 1.0, 1.0, health/(maxHealth+bonusHealth))
 	
