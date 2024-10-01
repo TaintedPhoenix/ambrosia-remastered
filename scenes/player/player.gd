@@ -21,13 +21,31 @@ func attacked(dmg : float, _knockback : float, attacker : Node):
 func _ready() -> void:
 	GameData.setPlayer(self)
 	GameData.itemEquipped.connect(item_equipped)
+	GameData.itemUnequipped.connect(item_unequipped)
 
-func item_equipped(_item, category):
+func item_equipped(item : Item, category):
 	if category == "Ability":
 		abilityused = true
+		if item is AbilityItem and item.ability is HealthAbility:
+			bonusHealth = item.ability.amount
+		else:
+			bonusHealth = 0
+			if health > maxHealth:
+				health = maxHealth
+
+func item_unequipped(category):
+	if category == "Ability":
+		bonusHealth = 0
+		if health > maxHealth:
+			health = maxHealth
 
 @warning_ignore("unused_parameter")
 func _process(delta : float):
+	#abilities
+	
+	
+	
+	#state machine
 	if state == "idle":
 		if (Input.is_action_just_pressed("move_up") and is_on_floor()) or (Input.is_action_just_pressed("move_up") and GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false) or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):
 			state = "move"

@@ -6,11 +6,11 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g4kyk"]
 atlas = ExtResource("2_imr8x")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kaggb"]
 atlas = ExtResource("2_daxpj")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(48, 16, 16, 16)
 
 [node name="HealthBar" type="Control"]
 layout_mode = 3
