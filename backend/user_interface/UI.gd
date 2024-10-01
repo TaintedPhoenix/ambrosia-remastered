@@ -1,7 +1,11 @@
 extends Node
 
+signal screen_resize
+
 var HUD : Node
 var state = "other" #"other" "game" "inventory" "pause" "hidden"
+
+var screenScale := Vector2.ONE
 
 var inventoryElement : UiElement = UiElement.new("inventory", "res://backend/user_interface/inventory/inventory.tscn")
 var pauseElement : UiElement = UiElement.new("pause", "res://backend/user_interface/pause/pause.tscn")
@@ -16,7 +20,14 @@ func _ready():
 	set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	HUD.set_process_mode(Node.PROCESS_MODE_ALWAYS)
 	add_child(HUD)
+	
+	screenScale = Vector2(get_viewport().get_visible_rect().size.x / 1920, get_viewport().get_visible_rect().size.y / 1080)
+	get_viewport().size_changed.connect(windowResized)
 	Loader.main_scene_changed.connect(scene_changed)
+	
+func windowResized():
+	screenScale = Vector2(get_viewport().get_visible_rect().size.x / 1920, get_viewport().get_visible_rect().size.y / 1080)
+	screen_resize.emit()
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("pause") :

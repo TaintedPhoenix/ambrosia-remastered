@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://di5cp58g4qlxh"]
+[gd_scene load_steps=4 format=3 uid="uid://di5cp58g4qlxh"]
+
+[ext_resource type="Script" path="res://backend/user_interface/gamehud/gamehud.gd" id="1_dl601"]
+[ext_resource type="PackedScene" uid="uid://bbh8o75qmf43w" path="res://backend/user_interface/gamehud/healthbar/healthbar.tscn" id="2_fq3md"]
+[ext_resource type="PackedScene" uid="uid://k3vk5pm0o71g" path="res://backend/user_interface/gamehud/equipment/weapon/itemdisplay.tscn" id="3_rt6wf"]
 
 [node name="Gamehud" type="CanvasLayer"]
+script = ExtResource("1_dl601")
+
+[node name="health" parent="." instance=ExtResource("2_fq3md")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -170.0
+offset_top = -160.0
+offset_right = -170.0
+offset_bottom = -160.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(4, 4)
+
+[node name="weapon" parent="." instance=ExtResource("3_rt6wf")]
+offset_left = -25.0
+offset_top = 860.0
+offset_right = 175.0
+offset_bottom = 1060.0
+
+[node name="ability" parent="." instance=ExtResource("3_rt6wf")]
+offset_left = 20.0
+offset_top = 720.0
+offset_right = 220.0
+offset_bottom = 920.0
+scale = Vector2(0.6, 0.6)

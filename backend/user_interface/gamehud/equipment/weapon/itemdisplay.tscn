@@ -5,18 +5,13 @@
 
 [node name="ItemDisplay" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 200.0
 script = ExtResource("1_s4jqe")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 100.0
-offset_right = 300.0
+offset_right = 200.0
 offset_bottom = 200.0
-rotation = 0.785398
-scale = Vector2(0.707, 0.707)
 texture = ExtResource("2_uj0jo")
