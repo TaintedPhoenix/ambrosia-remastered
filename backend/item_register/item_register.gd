@@ -54,7 +54,7 @@ var items : Array[Item] = [
 		"displayName" : "Red Shard",
 		"rarity" : ItemRarity.RARE,
 		"description" : "A pure red shard of some type of gem. You feel especially light when holding it",
-		"ability" : Ability.new({"id" : "doublejump"}),
+		"ability" : DoubleJumpAbility.new(),
 		"highlightColor" : Color("#f5002d")
 	}),
 	AbilityItem.new({

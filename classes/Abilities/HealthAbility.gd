@@ -12,3 +12,5 @@ func equip() -> void:
 	
 func unequip() -> void:
 	GameData.player.bonusHealth -= amount
+	if GameData.player.health > GameData.player.maxHealth + GameData.player.bonusHealth:
+		GameData.player.health = GameData.player.maxHealth + GameData.player.bonusHealth

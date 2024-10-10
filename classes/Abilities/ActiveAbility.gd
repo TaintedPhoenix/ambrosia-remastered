@@ -1,7 +1,7 @@
 
 class_name ActiveAbility extends Ability
 
-var actions : Array[String]
+var actions : Array
 var enabled : bool = false
 
 func _init(options : Dictionary = {}):

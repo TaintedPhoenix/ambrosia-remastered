@@ -2,6 +2,7 @@ extends Control
 
 func setColor(sp :int):
 	var x = (16 * sp) % 64
+	@warning_ignore("integer_division")
 	var y = int(sp / 4) * 16
 	$TextureRect.texture.region.position = Vector2(x, y)
 	$TextureRect2.texture.region.position = Vector2(x, y)

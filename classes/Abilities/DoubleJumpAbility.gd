@@ -11,6 +11,9 @@ func _init() -> void:
 func condition() -> bool:
 	return enabled and !GameData.player.is_on_floor()
 	
+func equip() -> void:
+	enabled = false
+
 func process(_delta) -> void:
 	if GameData.player.is_on_floor():
 		enabled = true
@@ -19,6 +22,6 @@ func activate() -> void:
 	enabled = false
 	if abs(GameData.player.velocity.y) < 200:
 		var x = GameData.player.velocity.y + 200
-		GameData.player.velocity.y = GameData.player.JUMP_VELOCITY * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
+		GameData.player.velocity.y = GameData.player.jump_velocity * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
 	else:
-		GameData.player.velocity.y = GameData.player.JUMP_VELOCITY
+		GameData.player.velocity.y = GameData.player.jump_velocity
