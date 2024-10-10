@@ -20,10 +20,10 @@ func attacked(dmg : float, _knockback : float, attacker : Node):
 
 func _ready() -> void:
 	GameData.setPlayer(self)
-	GameData.itemEquipped.connect(item_equipped)
-	GameData.itemUnequipped.connect(item_unequipped)
+	#GameData.itemEquipped.connect(item_equipped)
+	#GameData.itemUnequipped.connect(item_unequipped)
 
-func item_equipped(item : Item, category):
+"""func item_equipped(item : Item, category):
 	if category == "Ability":
 		abilityused = true
 		if item is AbilityItem and item.ability is HealthAbility:
@@ -37,7 +37,7 @@ func item_unequipped(category):
 	if category == "Ability":
 		bonusHealth = 0
 		if health > maxHealth:
-			health = maxHealth
+			health = maxHealth"""
 
 @warning_ignore("unused_parameter")
 func _process(delta : float):
@@ -65,19 +65,19 @@ func _process(delta : float):
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	elif GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump":
-		abilityused = false
+	#elif GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump":
+		#abilityused = false
 
 	if state == "move" or state == "attack":
 		if Input.is_action_just_pressed("move_up") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		elif Input.is_action_just_pressed("move_up") and GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false:
-			abilityused = true
-			if abs(velocity.y) < 200:
-				var x = velocity.y + 200
-				velocity.y = JUMP_VELOCITY * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
-			else:
-				velocity.y = JUMP_VELOCITY
+		#elif Input.is_action_just_pressed("move_up") and GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false:
+			#abilityused = true
+			#if abs(velocity.y) < 200:
+				#var x = velocity.y + 200
+				#velocity.y = JUMP_VELOCITY * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
+			#else:
+				#velocity.y = JUMP_VELOCITY
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -155,10 +155,10 @@ func moveState():
 	if Input.is_action_pressed("move_up"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		elif GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false:
-			abilityused = true
-			if abs(velocity.y) < 200:
-				var x = velocity.y + 200
-				velocity.y = JUMP_VELOCITY * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
-			else:
-				velocity.y = JUMP_VELOCITY
+		#elif GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false:
+			#abilityused = true
+			#if abs(velocity.y) < 200:
+				#var x = velocity.y + 200
+				#velocity.y = JUMP_VELOCITY * ((-(pow(x, 2)) + (400 * x))*(3.0/400000)+1)
+			#else:
+				#velocity.y = JUMP_VELOCITY

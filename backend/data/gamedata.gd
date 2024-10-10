@@ -97,6 +97,7 @@ func equipItem(item : Item):
 		equippedTrinket = item
 		itemEquipped.emit(item, "Ability")
 		inventoryChanged.emit()
+		equippedTrinket.ability.equip()
 		
 func unequipItem(category : String):
 	if category == "Weapon" and equippedWeapon != null:
@@ -106,8 +107,20 @@ func unequipItem(category : String):
 		itemUnequipped.emit(category)
 		inventoryChanged.emit()
 	elif category == "Ability" and equippedTrinket != null:
+		equippedTrinket.ability.unequip()
 		var temp = equippedTrinket
 		equippedTrinket = null
 		inventory.append(temp)
 		itemUnequipped.emit(category)
 		inventoryChanged.emit()
+		
+
+func _process(delta) -> void:
+	if equippedTrinket != null and equippedTrinket is AbilityItem:
+		equippedTrinket.ability.process(delta)
+		if equippedTrinket.ability is ActiveAbility:
+			for actionName in equippedTrinket.ability.actions:
+				if Input.is_action_just_pressed(actionName):
+					if equippedTrinket.ability.condition():
+						equippedTrinket.ability.activate()
+					break
