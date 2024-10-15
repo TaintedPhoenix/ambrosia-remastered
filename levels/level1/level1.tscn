@@ -47,7 +47,8 @@ chestId = "1-1"
 position = Vector2(897, -699)
 itemIds = {
 "deepredtopaz": 0.05,
-"redtopaz": 0.95
+"redmarquise": 0.3,
+"redtopaz": 0.65
 }
 chestId = "1-2"
 

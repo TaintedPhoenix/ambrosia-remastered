@@ -74,5 +74,14 @@ var items : Array[Item] = [
 		"description" : "A deep red gem. You feel much tougher while holding it",
 		"ability" : HealthAbility.new({"id" : "bonushealth", "amount" : 60}),
 		"highlightColor" : Color("#ff0d0d")
+	}),
+	AbilityItem.new({
+		"id" : "redmarquise",
+		"spritePath" : "res://resources/assets/items/trinkets/tile_2_1.png",
+		"displayName" : "Red Marquise",
+		"rarity" : ItemRarity.RARE,
+		"description" : "A pure red gem. You feel a bit lighter while holding it",
+		"ability" : DashAbility.new({"boost" : 400}),
+		"highlightColor" : Color("#f5002d")
 	})
 ]

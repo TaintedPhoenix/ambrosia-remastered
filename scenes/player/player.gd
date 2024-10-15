@@ -52,7 +52,6 @@ func _process(delta : float):
 			health = maxHealth + bonusHealth
 	
 	
-	
 	#state machine
 	if state == "idle":
 		if (Input.is_action_just_pressed("move_up") and is_on_floor()) or (Input.is_action_just_pressed("move_up") and GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump" and abilityused == false) or Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right"):

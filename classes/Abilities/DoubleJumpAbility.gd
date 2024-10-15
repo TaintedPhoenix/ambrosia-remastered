@@ -1,6 +1,8 @@
 
 class_name DoubleJumpAbility extends ActiveAbility
 
+var airFrames : int = 0
+
 func _init() -> void:
 	super({
 		"id" : "doublejump",
@@ -9,7 +11,7 @@ func _init() -> void:
 
 
 func condition() -> bool:
-	return enabled and !GameData.player.is_on_floor()
+	return enabled and !GameData.player.is_on_floor() and airFrames >= 2
 	
 func equip() -> void:
 	enabled = false
@@ -17,6 +19,9 @@ func equip() -> void:
 func process(_delta) -> void:
 	if GameData.player.is_on_floor():
 		enabled = true
+		airFrames = 0
+	else:
+		airFrames += 1
 
 func activate() -> void:
 	enabled = false

@@ -94,11 +94,11 @@ func equipItem(item : Item):
 		inventory.erase(item)
 		if equippedTrinket != null:
 			inventory.append(equippedTrinket)
+		dtt = 0
 		equippedTrinket = item
 		itemEquipped.emit(item, "Ability")
 		inventoryChanged.emit()
 		equippedTrinket.ability.equip()
-		
 func unequipItem(category : String):
 	if category == "Weapon" and equippedWeapon != null:
 		var temp = equippedWeapon
@@ -110,17 +110,36 @@ func unequipItem(category : String):
 		equippedTrinket.ability.unequip()
 		var temp = equippedTrinket
 		equippedTrinket = null
+		dtt = 0
 		inventory.append(temp)
 		itemUnequipped.emit(category)
 		inventoryChanged.emit()
 		
 
-func _process(delta) -> void:
-	if equippedTrinket != null and equippedTrinket is AbilityItem:
-		equippedTrinket.ability.process(delta)
-		if equippedTrinket.ability is ActiveAbility:
-			for actionName in equippedTrinket.ability.actions:
-				if Input.is_action_just_pressed(actionName):
+var dtt = 0
+
+
+func _input(event):
+	if equippedTrinket == null or not equippedTrinket is AbilityItem or not equippedTrinket.ability == ActiveAbility: return
+	if event is InputEventKey and event.is_pressed():
+		for actionName in equippedTrinket.ability.actions:
+			if actionName.begins_with("_d_"):
+				if event.is_action(actionName.substr(3)):
+					if dtt > 0:
+						dtt = 0
+						if equippedTrinket.ability.condition():
+							equippedTrinket.ability.activate()
+					else:
+						dtt = 0.3
+					break
+			else:
+				if event.is_action(actionName):
 					if equippedTrinket.ability.condition():
 						equippedTrinket.ability.activate()
 					break
+
+func _process(delta) -> void:
+	if equippedTrinket != null and equippedTrinket is AbilityItem:
+		equippedTrinket.ability.process(delta)
+	if dtt > 0:
+		dtt -= delta
