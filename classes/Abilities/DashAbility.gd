@@ -11,17 +11,19 @@ func _init(options : Dictionary = {}):
 
 
 func condition() -> bool:
+	print("condition", enabled)
 	return enabled
 	
 	
 func equip() -> void:
 	enabled = false
+	await GameData.delay(2.5)
+	enabled = true
+	print("ability enabled")
 
 func activate() -> void:
 	enabled = false
+	print("activated")
 	GameData.player.velocity.x = boost * Input.get_axis("move_left", "move_right")
-	var t = Timer.new()
-	t.wait_time = 2.0
-	t.start()
-	await t.timeout
+	await GameData.delay(2.0)
 	enabled = true

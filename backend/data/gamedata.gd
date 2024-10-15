@@ -116,25 +116,45 @@ func unequipItem(category : String):
 		inventoryChanged.emit()
 		
 
+func delay(time : float) -> Signal:
+	var t = Timer.new()
+	add_child(t)
+	t.wait_time = time
+	t.timeout.connect(t.queue_free)
+	t.start()
+	return t.timeout
+
+
 var dtt = 0
 
 
 func _input(event):
-	if equippedTrinket == null or not equippedTrinket is AbilityItem or not equippedTrinket.ability == ActiveAbility: return
-	if event is InputEventKey and event.is_pressed():
+	print("a")
+	if equippedTrinket == null or not equippedTrinket is AbilityItem or not equippedTrinket.ability is ActiveAbility: return
+	if event is InputEventKey:
+		print("c")
 		for actionName in equippedTrinket.ability.actions:
+			print("d")
 			if actionName.begins_with("_d_"):
-				if event.is_action(actionName.substr(3)):
+				print("e1")
+				if event.is_action_pressed(actionName.substr(3)):
+					print("f1")
 					if dtt > 0:
+						print("g1")
 						dtt = 0
 						if equippedTrinket.ability.condition():
+							print("h")
 							equippedTrinket.ability.activate()
 					else:
+						print("g2")
 						dtt = 0.3
 					break
 			else:
-				if event.is_action(actionName):
+				print("e2")
+				if event.is_action_pressed(actionName):
+					print("f2")
 					if equippedTrinket.ability.condition():
+						print("g3")
 						equippedTrinket.ability.activate()
 					break
 
