@@ -9,6 +9,10 @@ func attack() -> void:
 	visible=true
 	$Sprite2D.texture = eqw.get_sprite()
 	$Sprite2D.scale = eqw.size * Vector2(2.5, 2.5)
+	if get_local_mouse_position().x >= 0:
+		$"../AnimatedSprite2D".flip_h = false
+	else:
+		$"../AnimatedSprite2D".flip_h = true
 	$"../AnimatedSprite2D".speed_scale = 2.5 * eqw.speed
 	$AnimationPlayer.speed_scale = 6 * 2.5 * eqw.speed
 	var abox = load("res://scenes/weapons/slash/attackArea.tscn").instantiate()

@@ -81,7 +81,7 @@ var items : Array[Item] = [
 		"displayName" : "Red Marquise",
 		"rarity" : ItemRarity.RARE,
 		"description" : "A pure red gem. You feel a bit lighter while holding it",
-		"ability" : DashAbility.new({"boost" : 1050, "duration" : 0.5, "cooldown" : 0.5}),
+		"ability" : DashAbility.new({"boost" : 2400, "duration" : 0.25, "cooldown" : 0.5}),
 		"highlightColor" : Color("#f5002d")
 	})
 ]
