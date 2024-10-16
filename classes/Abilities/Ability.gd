@@ -9,6 +9,9 @@ func _init(options : Dictionary = {}):
 
 func process(_delta) -> void:
 	pass
+	
+func physics_process(_delta) -> void:
+	pass
 
 func equip() -> void:
 	pass

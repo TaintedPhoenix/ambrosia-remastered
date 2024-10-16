@@ -129,34 +129,27 @@ var dtt = 0
 
 
 func _input(event):
-	print("a")
 	if equippedTrinket == null or not equippedTrinket is AbilityItem or not equippedTrinket.ability is ActiveAbility: return
 	if event is InputEventKey:
-		print("c")
 		for actionName in equippedTrinket.ability.actions:
-			print("d")
 			if actionName.begins_with("_d_"):
-				print("e1")
 				if event.is_action_pressed(actionName.substr(3)):
-					print("f1")
 					if dtt > 0:
-						print("g1")
 						dtt = 0
 						if equippedTrinket.ability.condition():
-							print("h")
 							equippedTrinket.ability.activate()
 					else:
-						print("g2")
 						dtt = 0.3
 					break
 			else:
-				print("e2")
 				if event.is_action_pressed(actionName):
-					print("f2")
 					if equippedTrinket.ability.condition():
-						print("g3")
 						equippedTrinket.ability.activate()
 					break
+
+func _physics_process(delta: float) -> void:
+	if equippedTrinket != null and equippedTrinket is AbilityItem:
+		equippedTrinket.ability.physics_process(delta)
 
 func _process(delta) -> void:
 	if equippedTrinket != null and equippedTrinket is AbilityItem:

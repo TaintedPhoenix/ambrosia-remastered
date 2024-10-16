@@ -26,22 +26,6 @@ func _ready() -> void:
 	#GameData.itemEquipped.connect(item_equipped)
 	#GameData.itemUnequipped.connect(item_unequipped)
 
-"""func item_equipped(item : Item, category):
-	if category == "Ability":
-		abilityused = true
-		if item is AbilityItem and item.ability is HealthAbility:
-			bonusHealth = item.ability.amount
-		else:
-			bonusHealth = 0
-			if health > maxHealth:
-				health = maxHealth
-
-func item_unequipped(category):
-	if category == "Ability":
-		bonusHealth = 0
-		if health > maxHealth:
-			health = maxHealth"""
-
 @warning_ignore("unused_parameter")
 func _process(delta : float):
 	if regencd > 0.0:
@@ -89,10 +73,10 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("move_left", "move_right")
-		if direction:
+		if direction and abs(velocity.x) <= move_speed:
 			velocity.x = direction * move_speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, move_speed)
+			velocity.x = move_toward(velocity.x, 0, move_speed*delta*2.5)
 		
 		
 		if state != "attack":
@@ -119,7 +103,7 @@ func _physics_process(delta: float) -> void:
 				else:
 					$AnimatedSprite2D.position = Vector2(0,-20)
 	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed)
+		velocity.x = move_toward(velocity.x, 0, move_speed*delta*2.5)
 	move_and_slide()
 	
 func attackState():
