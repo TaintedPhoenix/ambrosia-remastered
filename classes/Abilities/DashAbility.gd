@@ -24,7 +24,6 @@ func equip() -> void:
 	enabled = false
 	await GameData.delay(cooldown)
 	enabled = true
-	print("ability enabled")
 	
 	
 func physics_process(delta):
@@ -45,7 +44,6 @@ func physics_process(delta):
 
 func activate() -> void:
 	enabled = false
-	print("activated")
 	GameData.player.set_physics_process(false)
 	GameData.player.velocity.y = 0
 	GameData.player.velocity.x = boost * Input.get_axis("move_left", "move_right")

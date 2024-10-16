@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
 var move_speed = 350.0
-var jump_velocity = -600.0
+var jump_velocity = -768
 const spriteSpeed = 2.5
 var regen_rate = 0.2
 var regen_cooldown = 5
 var maxHealth : float = 100.0
 var bonusHealth : float = 0.0
 var health = maxHealth + bonusHealth
+var friction = (move_speed/0.3)
+
+var accel = 350.0/0.3
 
 var regencd = 0.0
 
@@ -53,9 +56,10 @@ func _process(delta : float):
 	elif state == "attack":
 		pass
 		
+		
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y += 1563.0 * delta 
 	#elif GameData.equippedTrinket != null and GameData.equippedTrinket.ability.id == "doublejump":
 		#abilityused = false
 
@@ -74,9 +78,15 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("move_left", "move_right")
 		if direction and abs(velocity.x) <= move_speed:
-			velocity.x = direction * move_speed
+			if direction * abs(velocity.x) != velocity.x:
+				velocity.x = 0
+			velocity.x += direction * accel * delta
+			if abs(velocity.x) >= move_speed:
+				velocity.x = direction * move_speed
+		elif is_on_floor():
+			velocity.x = move_toward(velocity.x, 0, delta*friction)
 		else:
-			velocity.x = move_toward(velocity.x, 0, move_speed*delta*2.5)
+			velocity.x = move_toward(velocity.x, 0, delta*friction*0.5)
 		
 		
 		if state != "attack":
@@ -102,8 +112,10 @@ func _physics_process(delta: float) -> void:
 					$AnimatedSprite2D.position = Vector2(0, -20)
 				else:
 					$AnimatedSprite2D.position = Vector2(0,-20)
+	elif is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed*delta*2.5)
+		velocity.x = move_toward(velocity.x, 0, friction * delta * 0.5)
 	move_and_slide()
 	
 func attackState():
