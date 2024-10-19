@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://caf2b2mlxinpj" path="res://resources/assets/user_interface/MOUSE_indicator.png" id="3_h02to"]
 [ext_resource type="Texture2D" uid="uid://buw2t41slinux" path="res://resources/assets/user_interface/space_indicator.png" id="4_a2fu3"]
 [ext_resource type="Texture2D" uid="uid://cb5ug2khuiolv" path="res://resources/assets/user_interface/TAB_indicator.png" id="5_umr0i"]
-[ext_resource type="Script" path="res://input_indicatior.gd" id="6_whmo0"]
+[ext_resource type="Script" path="res://scenes/tutorial/input_indicatior.gd" id="6_whmo0"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1upo5"]
 light_mode = 1
@@ -115,12 +115,13 @@ radius = 69.1158
 material = SubResource("CanvasItemMaterial_1upo5")
 sprite_frames = SubResource("SpriteFrames_vl1ih")
 animation = &"e"
-speed_scale = 0.2
+speed_scale = 0.23
 offset = Vector2(-0.5, 0)
 script = ExtResource("6_whmo0")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 shape = SubResource("CircleShape2D_0qwcl")

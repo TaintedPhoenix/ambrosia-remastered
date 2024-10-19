@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://tpxf1vx5ejis"]
+[gd_scene load_steps=47 format=4 uid="uid://tpxf1vx5ejis"]
 
 [ext_resource type="Script" path="res://levels/level3/LevelData.gd" id="1_g7rbg"]
 [ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="2_w8ven"]
@@ -15,10 +15,167 @@
 [ext_resource type="Texture2D" uid="uid://dkqx6yabb6h7l" path="res://resources/assets/environment/mushrooms/redLargeMushroom.png" id="12_ao3q0"]
 [ext_resource type="Texture2D" uid="uid://tyqegqpnr77y" path="res://resources/assets/environment/mushrooms/blueMediumMushroom.png" id="13_824cl"]
 [ext_resource type="PackedScene" uid="uid://dhacemmrpk6" path="res://backend/loader/load_zones/Fallzone.tscn" id="16_3j0ou"]
+[ext_resource type="Script" path="res://levels/level1/tutorialCutsceneItem.gd" id="16_kq0sj"]
 [ext_resource type="PackedScene" uid="uid://cg2xsc7ovtljx" path="res://scenes/enemies/shroomite/red/redShroomite.tscn" id="17_d46x4"]
+[ext_resource type="Shader" path="res://resources/shaders/uncolored_item.gdshader" id="17_gf2aj"]
+[ext_resource type="Texture2D" uid="uid://c850b2346ks4e" path="res://resources/assets/items/Charged_Calamity.png" id="18_8oyrs"]
 [ext_resource type="PackedScene" uid="uid://djxvnkpd8su55" path="res://scenes/enemies/shroomite/blue/blueShroomite.tscn" id="18_bcj1o"]
 [ext_resource type="PackedScene" uid="uid://6xmye1232m2a" path="res://scenes/environment/gate.tscn" id="18_cubn5"]
-[ext_resource type="PackedScene" uid="uid://bc21le3lhi7b7" path="res://scenes/collectables/item/item.tscn" id="19_w8m16"]
+[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/tutorial/action_indicator.tscn" id="19_j55p1"]
+[ext_resource type="Script" path="res://scenes/enemies/shroomite/redShroomite.gd" id="20_y5vdg"]
+[ext_resource type="Texture2D" uid="uid://bgff0tsvp2tu4" path="res://resources/assets/enemies/shroomite/redShroomite.png" id="21_t0mew"]
+[ext_resource type="Script" path="res://scenes/enemies/shroomite/wake.gd" id="22_7cs8n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ces"]
+shader = ExtResource("17_gf2aj")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6qr6q"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1oac"]
+size = Vector2(56, 22)
+
+[sub_resource type="Animation" id="Animation_0kgkq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nm2s5"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsgmn"]
+_data = {
+"RESET": SubResource("Animation_0kgkq"),
+"hover": SubResource("Animation_nm2s5")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x1k7"]
+shader = ExtResource("17_gf2aj")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pxmq0"]
+light_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvs8d"]
+size = Vector2(56, 22)
+
+[sub_resource type="Animation" id="Animation_bhhxy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_edecr"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2gto"]
+_data = {
+"RESET": SubResource("Animation_bhhxy"),
+"hover": SubResource("Animation_edecr")
+}
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 53.0
+height = 118.0
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("21_t0mew")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="9"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="10"]
+radius = 499.34
 
 [node name="rootNode" type="Node2D"]
 script = ExtResource("1_g7rbg")
@@ -459,26 +616,6 @@ texture = ExtResource("8_dvwaq")
 texture_scale = 2.0
 metadata/_edit_lock_ = true
 
-[node name="redMed6" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(4282, 398)
-rotation = 1.5708
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_dsr1f")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redMed6"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
 [node name="redMed3" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
 show_behind_parent = true
@@ -637,86 +774,6 @@ texture = ExtResource("8_dvwaq")
 texture_scale = 2.0
 metadata/_edit_lock_ = true
 
-[node name="redSmall16" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(5166, 381)
-rotation = -1.5708
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_l165y")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall16"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
-[node name="redSmall17" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(5461, 628)
-rotation = -1.5708
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_l165y")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall17"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
-[node name="redSmall18" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(5287, 501)
-rotation = 3.14159
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_l165y")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall18"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
-[node name="redSmall19" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(4150, 598)
-rotation = 3.14159
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_l165y")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall19"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
 [node name="redSmall20" type="Sprite2D" parent="Layer0/Shrooms"]
 modulate = Color(0.988235, 0.839216, 0.839216, 1)
 show_behind_parent = true
@@ -727,26 +784,6 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_l165y")
 
 [node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall20"]
-position = Vector2(4.00021, -25.9998)
-color = Color(1, 0.00392157, 0.00392157, 1)
-energy = 0.75
-range_z_min = -15
-range_z_max = 15
-shadow_enabled = true
-texture = ExtResource("8_dvwaq")
-texture_scale = 2.0
-metadata/_edit_lock_ = true
-
-[node name="redSmall21" type="Sprite2D" parent="Layer0/Shrooms"]
-modulate = Color(0.988235, 0.839216, 0.839216, 1)
-show_behind_parent = true
-z_index = -1
-position = Vector2(4347, 257)
-rotation = 3.14159
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("9_l165y")
-
-[node name="Light2" type="PointLight2D" parent="Layer0/Shrooms/redSmall21"]
 position = Vector2(4.00021, -25.9998)
 color = Color(1, 0.00392157, 0.00392157, 1)
 energy = 0.75
@@ -1131,18 +1168,107 @@ metadata/_edit_lock_ = true
 [node name="Fallzone" parent="." instance=ExtResource("16_3j0ou")]
 position = Vector2(3643, 435)
 
-[node name="Item" parent="." instance=ExtResource("19_w8m16")]
+[node name="TutorialItem" type="Node2D" parent="."]
 position = Vector2(2423, -388)
+script = ExtResource("16_kq0sj")
+cutscene = "tutorialWeaponPickup"
 
-[node name="Item3" parent="." instance=ExtResource("19_w8m16")]
+[node name="Sprite2D" type="Sprite2D" parent="TutorialItem"]
+material = SubResource("ShaderMaterial_f8ces")
+scale = Vector2(3, 3)
+texture = ExtResource("18_8oyrs")
+
+[node name="actionIndicator" parent="TutorialItem/Sprite2D" instance=ExtResource("19_j55p1")]
+material = SubResource("CanvasItemMaterial_6qr6q")
+position = Vector2(0, -18)
+instanced = true
+
+[node name="Area2D" type="Area2D" parent="TutorialItem"]
+scale = Vector2(4, 4)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialItem/Area2D"]
+shape = SubResource("RectangleShape2D_r1oac")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialItem"]
+libraries = {
+"": SubResource("AnimationLibrary_nsgmn")
+}
+
+[node name="TutorialItem2" type="Node2D" parent="."]
 position = Vector2(4094, -4)
+script = ExtResource("16_kq0sj")
 itemId = "redshard"
+cutscene = "tutorialAbilityPickup"
+
+[node name="Sprite2D" type="Sprite2D" parent="TutorialItem2"]
+material = SubResource("ShaderMaterial_1x1k7")
+scale = Vector2(3, 3)
+texture = ExtResource("18_8oyrs")
+
+[node name="actionIndicator" parent="TutorialItem2/Sprite2D" instance=ExtResource("19_j55p1")]
+material = SubResource("CanvasItemMaterial_pxmq0")
+position = Vector2(0, -18)
+instanced = true
+
+[node name="Area2D" type="Area2D" parent="TutorialItem2"]
+scale = Vector2(4, 4)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TutorialItem2/Area2D"]
+shape = SubResource("RectangleShape2D_tvs8d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TutorialItem2"]
+libraries = {
+"": SubResource("AnimationLibrary_j2gto")
+}
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="red2" parent="Enemies" instance=ExtResource("17_d46x4")]
+[node name="red2" type="CharacterBody2D" parent="Enemies"]
 modulate = Color(1, 0.611765, 0.611765, 1)
+texture_filter = 1
 position = Vector2(2840, -18)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("20_y5vdg")
+
+[node name="Area2Datk" type="Area2D" parent="Enemies/red2"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/red2/Area2Datk"]
+visible = false
+position = Vector2(1, 19)
+rotation = 1.5708
+shape = SubResource("2")
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemies/red2"]
+target_position = Vector2(-51, 55)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Enemies/red2"]
+texture_filter = 1
+sprite_frames = SubResource("9")
+frame = 4
+frame_progress = 0.402233
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/red2"]
+visible = false
+scale = Vector2(5.64, 6.88)
+polygon = PackedVector2Array(-3.5461, 9.30233, 3.7234, 9.30233, 3.7234, 6.25, 7.97872, 6.25, 7.97872, 4.21512, 2.83688, -2.76163, -2.30496, -2.76163, -7.0922, 3.92442, -7.0922, 5.9593, -3.5461, 5.9593)
+
+[node name="wake" type="Area2D" parent="Enemies/red2"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("22_7cs8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/red2/wake"]
+visible = false
+position = Vector2(1, 21)
+shape = SubResource("10")
 
 [node name="Light2" type="PointLight2D" parent="Enemies/red2"]
 position = Vector2(-3.24249e-05, 11)
@@ -1155,9 +1281,55 @@ texture = ExtResource("8_dvwaq")
 texture_scale = 2.0
 metadata/_edit_lock_ = true
 
-[node name="red3" parent="Enemies" instance=ExtResource("17_d46x4")]
+[node name="actionIndicator" parent="Enemies/red2" instance=ExtResource("19_j55p1")]
+position = Vector2(0, -48)
+scale = Vector2(2.66, 2)
+animation = &"mouse1"
+offset = Vector2(0.5, 0)
+key = "mouse1"
+
+[node name="red3" type="CharacterBody2D" parent="Enemies"]
 modulate = Color(1, 0.611765, 0.611765, 1)
+texture_filter = 1
 position = Vector2(3477, -17)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("20_y5vdg")
+
+[node name="Area2Datk" type="Area2D" parent="Enemies/red3"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/red3/Area2Datk"]
+visible = false
+position = Vector2(1, 19)
+rotation = 1.5708
+shape = SubResource("2")
+
+[node name="RayCast2D" type="RayCast2D" parent="Enemies/red3"]
+target_position = Vector2(-51, 55)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Enemies/red3"]
+texture_filter = 1
+sprite_frames = SubResource("9")
+frame = 4
+frame_progress = 0.402233
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Enemies/red3"]
+visible = false
+scale = Vector2(5.64, 6.88)
+polygon = PackedVector2Array(-3.5461, 9.30233, 3.7234, 9.30233, 3.7234, 6.25, 7.97872, 6.25, 7.97872, 4.21512, 2.83688, -2.76163, -2.30496, -2.76163, -7.0922, 3.92442, -7.0922, 5.9593, -3.5461, 5.9593)
+
+[node name="wake" type="Area2D" parent="Enemies/red3"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("22_7cs8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/red3/wake"]
+visible = false
+position = Vector2(1, 21)
+shape = SubResource("10")
 
 [node name="Light2" type="PointLight2D" parent="Enemies/red3"]
 position = Vector2(-3.24249e-05, 11)
@@ -1169,6 +1341,13 @@ shadow_enabled = true
 texture = ExtResource("8_dvwaq")
 texture_scale = 2.0
 metadata/_edit_lock_ = true
+
+[node name="actionIndicator" parent="Enemies/red3" instance=ExtResource("19_j55p1")]
+position = Vector2(0, -48)
+scale = Vector2(2.66, 2)
+animation = &"mouse1"
+offset = Vector2(0.5, 0)
+key = "mouse1"
 
 [node name="Reference" type="Node" parent="."]
 
@@ -1541,3 +1720,37 @@ metadata/_edit_lock_ = true
 position = Vector2(3939, -72)
 scale = Vector2(1.667, 1.667)
 requirements = [NodePath("../Enemies/red2"), NodePath("../Enemies/red3")]
+
+[node name="actionIndicator" parent="." instance=ExtResource("19_j55p1")]
+position = Vector2(1620, -467)
+scale = Vector2(3, 3)
+animation = &"space"
+key = "space"
+
+[node name="actionIndicator2" parent="." instance=ExtResource("19_j55p1")]
+position = Vector2(2162, -443)
+scale = Vector2(3, 3)
+animation = &"space"
+key = "space"
+
+[node name="actionIndicator3" parent="." instance=ExtResource("19_j55p1")]
+position = Vector2(4590, -54)
+scale = Vector2(3, 3)
+animation = &"space"
+key = "space"
+
+[node name="actionIndicator4" parent="." instance=ExtResource("19_j55p1")]
+position = Vector2(4761, -148)
+scale = Vector2(3, 3)
+animation = &"space"
+key = "space"
+metadata/_edit_group_ = true
+
+[connection signal="area_exited" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="exited"]
+[connection signal="body_entered" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="_on_Area2Datk_body_entered"]
+[connection signal="child_entered_tree" from="Enemies/red2/RayCast2D" to="Enemies/red2" method="_on_RayCast2D_child_entered_tree"]
+[connection signal="area_exited" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="exited"]
+[connection signal="body_entered" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="_on_Area2Datk_body_entered"]
+[connection signal="child_entered_tree" from="Enemies/red3/RayCast2D" to="Enemies/red3" method="_on_RayCast2D_child_entered_tree"]

@@ -31,13 +31,13 @@ func _process(_delta: float) -> void:
 
 func spawnItem():
 	set_process(false)
+	$actionIndicator.hidden()
 	$Sprite2D.texture = originalTexture
 	$Sprite2D.position = Vector2(0,0)
 	$Area2D.body_entered.disconnect(entered)
 	$Area2D.body_exited.disconnect(exited)
 	$AnimationPlayer.play("shake")
 	await $AnimationPlayer.animation_finished
-	$actionIndicator.hidden()
 	open()
 	var toSpawn = null
 	var totalWeight = 0

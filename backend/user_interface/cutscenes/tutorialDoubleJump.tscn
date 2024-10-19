@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6iddok73v3sg"]
+
+[ext_resource type="Script" path="res://backend/user_interface/cutscenes/tutorial_weapon_cutscene.gd" id="1_i5f67"]
+[ext_resource type="FontFile" uid="uid://c33oi8sn2cpgv" path="res://resources/fonts/Monocraft.ttf" id="2_brmsd"]
+[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/tutorial/action_indicator.tscn" id="3_8y4ob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ajmc"]
+bg_color = Color(0.07, 0.07, 0.07, 0.733333)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TutorialWeapon" type="CanvasLayer"]
+script = ExtResource("1_i5f67")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 640.0
+offset_top = 405.0
+offset_right = 1280.0
+offset_bottom = 675.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ajmc")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("2_brmsd")
+theme_override_font_sizes/font_size = 36
+text = "Now that you have equipped the double jump gem, you can double jump by pressing     while in the air."
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 234.0
+offset_right = 880.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("2_brmsd")
+theme_override_font_sizes/font_size = 18
+text = "Press   to continue..."
+autowrap_mode = 2
+
+[node name="actionIndicator2" parent="Panel" instance=ExtResource("3_8y4ob")]
+position = Vector2(343, 160)
+scale = Vector2(5.714, 4)
+animation = &"space"
+offset = Vector2(0, 0)
+key = "space"
+instanced = true
+showOnStart = true
+
+[node name="actionIndicator3" parent="Panel" instance=ExtResource("3_8y4ob")]
+position = Vector2(397, 244)
+scale = Vector2(2.5, 2.5)
+instanced = true
+showOnStart = true

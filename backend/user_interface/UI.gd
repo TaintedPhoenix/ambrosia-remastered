@@ -55,6 +55,21 @@ func _process(_delta):
 			get_tree().paused = false
 			state = "game"
 	
+func playCutscene(cutscene : String):
+	state = "pause"
+	get_tree().paused = true
+	hideAllElements()
+	var cs = load("res://backend/user_interface/cutscenes/" + cutscene + ".tscn")
+	if cs == null: return
+	cs = cs.instantiate()
+	cs.name = cutscene
+	HUD.add_child(cs)
+	await cs.cutscene_finished
+	cs.queue_free()
+	state = "game"
+	showElement(gameHudElement)
+	get_tree().paused = false
+	
 func scene_changed():
 	hideAllElements()
 	get_tree().paused = false

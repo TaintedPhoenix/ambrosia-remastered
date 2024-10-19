@@ -3,18 +3,18 @@
 [ext_resource type="Script" path="res://scenes/collectables/item/ItemCollectable.gd" id="1_sef1j"]
 [ext_resource type="Shader" path="res://resources/shaders/uncolored_item.gdshader" id="2_5286p"]
 [ext_resource type="Texture2D" uid="uid://c850b2346ks4e" path="res://resources/assets/items/Charged_Calamity.png" id="2_tcrhr"]
-[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/Tutorial/action_indicator.tscn" id="4_5y1a4"]
+[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/tutorial/action_indicator.tscn" id="4_5y1a4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ces"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x1k7"]
 shader = ExtResource("2_5286p")
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6qr6q"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pxmq0"]
 light_mode = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1oac"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvs8d"]
 size = Vector2(56, 22)
 
-[sub_resource type="Animation" id="Animation_0kgkq"]
+[sub_resource type="Animation" id="Animation_bhhxy"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_nm2s5"]
+[sub_resource type="Animation" id="Animation_edecr"]
 resource_name = "hover"
 length = 2.0
 loop_mode = 1
@@ -46,22 +46,22 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsgmn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2gto"]
 _data = {
-"RESET": SubResource("Animation_0kgkq"),
-"hover": SubResource("Animation_nm2s5")
+"RESET": SubResource("Animation_bhhxy"),
+"hover": SubResource("Animation_edecr")
 }
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_sef1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_f8ces")
+material = SubResource("ShaderMaterial_1x1k7")
 scale = Vector2(3, 3)
 texture = ExtResource("2_tcrhr")
 
 [node name="actionIndicator" parent="Sprite2D" instance=ExtResource("4_5y1a4")]
-material = SubResource("CanvasItemMaterial_6qr6q")
+material = SubResource("CanvasItemMaterial_pxmq0")
 position = Vector2(0, -18)
 instanced = true
 
@@ -71,9 +71,9 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_r1oac")
+shape = SubResource("RectangleShape2D_tvs8d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nsgmn")
+"": SubResource("AnimationLibrary_j2gto")
 }

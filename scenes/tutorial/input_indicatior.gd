@@ -2,6 +2,7 @@ extends AnimatedSprite2D
 
 @export var key : String = "e"
 @export var instanced = false
+@export var showOnStart = false
 
 func init(k : String):
 	key = k
@@ -26,11 +27,14 @@ func _ready() -> void:
 	else:
 		offset.x = 0
 	if not instanced:
+		$Area2D.scale = Vector2(3.0/scale.x, 3.0/scale.y)
 		$Area2D.body_entered.connect(func(body):
 			if GameData.isPlayer(body):
 				shown()
-			)
+		)
 		$Area2D.body_exited.connect(func(body):
 			if GameData.isPlayer(body):
 				hidden()
-			)
+		)
+	elif showOnStart:
+		shown()
