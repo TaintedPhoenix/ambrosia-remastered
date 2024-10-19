@@ -4,4 +4,4 @@ func _ready():
 	pressed.connect(buttonpressed)
 	
 func buttonpressed():
-	Loader.loadLevel(1)
+	Loader.startLevel(1)

@@ -3,6 +3,8 @@ extends AnimatedSprite2D
 @export var key : String = "e"
 @export var instanced = false
 @export var showOnStart = false
+@export var stagger = false
+@export var vanish = false
 
 func init(k : String):
 	key = k
@@ -10,7 +12,11 @@ func init(k : String):
 	
 func shown():
 	visible = true
-	play(key.to_lower())
+	if not stagger:
+		play(key.to_lower())
+	else:
+		frame = 1
+		play(key.to_lower())
 	
 func hidden():
 	visible = false
@@ -18,14 +24,15 @@ func hidden():
 
 func _ready() -> void:
 	visible = false
-	if key == "tab":
-		offset.x = 1
-	elif key == "mouse1" or key == "esc":
-		offset.x = 0.5
-	elif key == "e":
-		offset.x = -0.5
-	else:
-		offset.x = 0
+	match key:
+		"tab":
+			offset.x = 1
+		"mouse1", "esc":
+			offset.x = 0.5
+		"e", "d", "a":
+			offset.x = -0.5
+		_:
+			offset.x = 0
 	if not instanced:
 		$Area2D.scale = Vector2(3.0/scale.x, 3.0/scale.y)
 		$Area2D.body_entered.connect(func(body):
@@ -35,6 +42,8 @@ func _ready() -> void:
 		$Area2D.body_exited.connect(func(body):
 			if GameData.isPlayer(body):
 				hidden()
+				if vanish:
+					queue_free()
 		)
 	elif showOnStart:
 		shown()

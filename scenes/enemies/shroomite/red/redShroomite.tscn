@@ -103,6 +103,6 @@ position = Vector2(1, 21)
 shape = SubResource("10")
 
 [connection signal="area_exited" from="Area2Datk" to="." method="exited"]
-[connection signal="body_entered" from="Area2Datk" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2Datk" to="." method="_on_Area2Datk_body_entered"]
+[connection signal="body_entered" from="Area2Datk" to="." method="_on_Area2D_body_entered"]
 [connection signal="child_entered_tree" from="RayCast2D" to="." method="_on_RayCast2D_child_entered_tree"]

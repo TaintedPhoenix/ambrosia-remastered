@@ -22,7 +22,7 @@ var abilityused = false
 func attacked(dmg : float, _knockback : float, attacker : Node):
 	health -= dmg
 	if health <= 0:
-		Loader.resetScene()
+		Loader.death()
 
 func _ready() -> void:
 	GameData.setPlayer(self)
