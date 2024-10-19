@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc21le3lhi7b7"]
+[gd_scene load_steps=11 format=3 uid="uid://bc21le3lhi7b7"]
 
 [ext_resource type="Script" path="res://scenes/collectables/item/ItemCollectable.gd" id="1_sef1j"]
 [ext_resource type="Shader" path="res://resources/shaders/uncolored_item.gdshader" id="2_5286p"]
 [ext_resource type="Texture2D" uid="uid://c850b2346ks4e" path="res://resources/assets/items/Charged_Calamity.png" id="2_tcrhr"]
+[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/Tutorial/action_indicator.tscn" id="4_5y1a4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hcn4g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ces"]
 shader = ExtResource("2_5286p")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6qr6q"]
+light_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1oac"]
 size = Vector2(56, 22)
@@ -52,9 +56,14 @@ _data = {
 script = ExtResource("1_sef1j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_hcn4g")
+material = SubResource("ShaderMaterial_f8ces")
 scale = Vector2(3, 3)
 texture = ExtResource("2_tcrhr")
+
+[node name="actionIndicator" parent="Sprite2D" instance=ExtResource("4_5y1a4")]
+material = SubResource("CanvasItemMaterial_6qr6q")
+position = Vector2(0, -18)
+instanced = true
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(4, 4)

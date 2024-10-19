@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c43sfwogyvcxc" path="res://levels/level3/Light.tscn" id="3_63s5i"]
 [ext_resource type="Script" path="res://levels/level3/canvasColor.gd" id="4_nrvmy"]
 [ext_resource type="PackedScene" uid="uid://do4jmywscftk4" path="res://backend/loader/load_zones/Endzone.tscn" id="5_ew1hf"]
-[ext_resource type="PackedScene" uid="uid://cc45cd2qbysis" path="res://scenes/environment/chest.tscn" id="6_6hl8i"]
+[ext_resource type="PackedScene" uid="uid://cc45cd2qbysis" path="res://scenes/collectables/chest/chest.tscn" id="6_6hl8i"]
 [ext_resource type="TileSet" uid="uid://ct0xxnbnahj6a" path="res://Antonys_funny_tileset.tres" id="6_oxe0w"]
 [ext_resource type="Texture2D" uid="uid://bb6gy5xt65qrd" path="res://resources/assets/environment/trees/tree2.png" id="7_fgdeo"]
 [ext_resource type="Texture2D" uid="uid://bk4ojll4vtm25" path="res://resources/assets/environment/light/LIGHTC.png" id="8_dvwaq"]

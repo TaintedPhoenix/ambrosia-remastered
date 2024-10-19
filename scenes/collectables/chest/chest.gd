@@ -37,6 +37,7 @@ func spawnItem():
 	$Area2D.body_exited.disconnect(exited)
 	$AnimationPlayer.play("shake")
 	await $AnimationPlayer.animation_finished
+	$actionIndicator.hidden()
 	open()
 	var toSpawn = null
 	var totalWeight = 0
@@ -66,12 +67,14 @@ func open() -> void:
 
 func entered(body : Node) -> void:
 	if not opened and GameData.isPlayer(body):
+		$actionIndicator.shown()
 		$Sprite2D.texture = highlightTexture
 		$Sprite2D.position = Vector2(0,-4.5)
 		set_process(true)
 
 func exited(body : Node) -> void:
 	if not opened and GameData.isPlayer(body):
+		$actionIndicator.hidden()
 		$Sprite2D.texture = originalTexture
 		$Sprite2D.position = Vector2(0,0)
 		set_process(false)

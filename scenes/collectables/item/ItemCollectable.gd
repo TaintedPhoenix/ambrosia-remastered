@@ -36,11 +36,13 @@ func _process(_delta: float) -> void:
 	
 func entered(body : Node) -> void:
 	if GameData.isPlayer(body):
+		$Sprite2D/actionIndicator.shown()
 		$Sprite2D.texture = highlight
 		set_process(true)
 
 func exited(body : Node) -> void:
 	if GameData.isPlayer(body):
+		$Sprite2D/actionIndicator.hidden()
 		$Sprite2D.texture = item.get_sprite()
 		set_process(false)
 

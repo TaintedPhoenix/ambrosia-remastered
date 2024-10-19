@@ -1,11 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc45cd2qbysis"]
 
-[ext_resource type="Script" path="res://scenes/environment/chest.gd" id="1_vs8sm"]
-[ext_resource type="Shader" path="res://resources/shaders/uncolored_item.gdshader" id="2_5b2jt"]
+[ext_resource type="Script" path="res://scenes/collectables/chest/chest.gd" id="1_vs8sm"]
 [ext_resource type="Texture2D" uid="uid://dajnvpdvxgmty" path="res://resources/assets/environment/ChestClosed.png" id="2_m1ln5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_74sq4"]
-shader = ExtResource("2_5b2jt")
+[ext_resource type="PackedScene" uid="uid://bfysaicffk328" path="res://scenes/Tutorial/action_indicator.tscn" id="4_db76q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utkic"]
 size = Vector2(76, 46)
@@ -47,13 +44,14 @@ _data = {
 "shake": SubResource("Animation_coes8")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7esvv"]
+
 [node name="chest" type="Node2D"]
 z_index = -1
 script = ExtResource("1_vs8sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_74sq4")
 scale = Vector2(3, 3)
 texture = ExtResource("2_m1ln5")
 
@@ -70,3 +68,9 @@ shape = SubResource("RectangleShape2D_utkic")
 libraries = {
 "": SubResource("AnimationLibrary_31mpg")
 }
+
+[node name="actionIndicator" parent="." instance=ExtResource("4_db76q")]
+material = SubResource("CanvasItemMaterial_7esvv")
+position = Vector2(0, -56)
+scale = Vector2(3, 3)
+instanced = true
