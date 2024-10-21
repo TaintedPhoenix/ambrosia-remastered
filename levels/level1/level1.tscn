@@ -1337,6 +1337,7 @@ position = Vector2(3643, 435)
 position = Vector2(2423, -388)
 script = ExtResource("16_kq0sj")
 cutscene = "tutorialWeaponPickup"
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TutorialItem"]
 material = SubResource("ShaderMaterial_f8ces")
@@ -1364,8 +1365,9 @@ libraries = {
 [node name="TutorialItem2" type="Node2D" parent="."]
 position = Vector2(4094, -4)
 script = ExtResource("16_kq0sj")
-itemId = "redshard"
+itemId = "whiteshard"
 cutscene = "tutorialAbilityPickup"
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TutorialItem2"]
 material = SubResource("ShaderMaterial_1x1k7")
