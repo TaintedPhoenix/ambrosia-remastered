@@ -56,9 +56,10 @@ func _process(_delta):
 			state = "game"
 	
 func playCutscene(cutscene : String):
-	state = "pause"
+	state = "other"
 	get_tree().paused = true
 	hideAllElements()
+	hideElement(inventoryElement)
 	var cs = load("res://backend/user_interface/cutscenes/" + cutscene + ".tscn")
 	if cs == null: return
 	cs = cs.instantiate()

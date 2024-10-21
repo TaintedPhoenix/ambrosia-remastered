@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://tpxf1vx5ejis"]
+[gd_scene load_steps=57 format=4 uid="uid://tpxf1vx5ejis"]
 
 [ext_resource type="Script" path="res://levels/level3/LevelData.gd" id="1_g7rbg"]
 [ext_resource type="PackedScene" uid="uid://gylsgdn8fccn" path="res://scenes/player/player.tscn" id="2_w8ven"]
@@ -27,6 +27,8 @@
 [ext_resource type="Script" path="res://scenes/environment/gate.gd" id="25_mxve5"]
 [ext_resource type="Texture2D" uid="uid://bv30tja2ejhje" path="res://resources/assets/environment/gate1.png" id="26_msnbh"]
 [ext_resource type="Script" path="res://levels/level1/gateCutscene.gd" id="27_4phe0"]
+[ext_resource type="Script" path="res://levels/level1/tutorial_weapon_equip_cutscene_trigger.gd" id="28_1325m"]
+[ext_resource type="Script" path="res://levels/level1/tutorial_ability_equip_cutscene_trigger.gd" id="29_i8dtv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f8ces"]
 shader = ExtResource("17_gf2aj")
@@ -1919,7 +1921,6 @@ script = ExtResource("27_4phe0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/Area2D"]
 visible = false
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_autsu")
 
 [node name="actionIndicator" parent="." instance=ExtResource("19_j55p1")]
@@ -1967,11 +1968,17 @@ key = "space"
 vanish = true
 metadata/_edit_group_ = true
 
+[node name="TutorialWeaponEquipCutscene" type="Node" parent="."]
+script = ExtResource("28_1325m")
+
+[node name="TutorialWeaponEquipCutscene2" type="Node" parent="."]
+script = ExtResource("29_i8dtv")
+
 [connection signal="area_exited" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="exited"]
-[connection signal="body_entered" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="_on_Area2Datk_body_entered"]
 [connection signal="body_entered" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemies/red2/Area2Datk" to="Enemies/red2" method="_on_Area2Datk_body_entered"]
 [connection signal="child_entered_tree" from="Enemies/red2/RayCast2D" to="Enemies/red2" method="_on_RayCast2D_child_entered_tree"]
 [connection signal="area_exited" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="exited"]
-[connection signal="body_entered" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="_on_Area2Datk_body_entered"]
 [connection signal="body_entered" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Enemies/red3/Area2Datk" to="Enemies/red3" method="_on_Area2Datk_body_entered"]
 [connection signal="child_entered_tree" from="Enemies/red3/RayCast2D" to="Enemies/red3" method="_on_RayCast2D_child_entered_tree"]
