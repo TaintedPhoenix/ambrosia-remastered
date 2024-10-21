@@ -13,10 +13,8 @@ func setRotation(i : Item):
 	if i.id in rotations and rotations[i.id] == -45:
 		rotation_degrees = -45
 		scale = (200/sqrt(2*((size.x)**2))) * ogScale
-		position = Vector2(ogScale.x * 100, 0) + ogPos
 	else:
 		rotation_degrees = 0
-		position = ogPos
 		scale = ogScale
 
 
