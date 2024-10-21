@@ -154,7 +154,7 @@ radius = 69.1158
 [node name="actionIndicator" type="AnimatedSprite2D"]
 material = SubResource("CanvasItemMaterial_1upo5")
 sprite_frames = SubResource("SpriteFrames_vl1ih")
-animation = &"a"
+animation = &"e"
 speed_scale = 0.23
 offset = Vector2(-0.5, 0)
 script = ExtResource("6_whmo0")

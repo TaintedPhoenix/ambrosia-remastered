@@ -3,7 +3,7 @@ extends CharacterBody2D
 var move_speed = 350.0
 var jump_velocity = -768
 const spriteSpeed = 2.5
-var regen_rate = 0.2
+var regen_rate = (100)/(30.0)
 var regen_cooldown = 5
 var maxHealth : float = 100.0
 var bonusHealth : float = 0.0
@@ -23,6 +23,7 @@ func attacked(dmg : float, _knockback : float, attacker : Node):
 	health -= dmg
 	if health <= 0:
 		Loader.death()
+	regencd = regen_cooldown
 
 func _ready() -> void:
 	GameData.setPlayer(self)

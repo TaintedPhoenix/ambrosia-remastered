@@ -368,18 +368,11 @@ position = Vector2(6365, -32)
 [node name="chest" parent="." instance=ExtResource("6_6hl8i")]
 position = Vector2(4081, -2139)
 itemIds = {
-"bloody_cleaver": 0.25
+"deepredtopaz": 0.05,
+"redtopaz": 0.65,
+"whitemarquise": 0.3
 }
 chestId = "1-1"
-
-[node name="chest2" parent="." instance=ExtResource("6_6hl8i")]
-position = Vector2(897, -699)
-itemIds = {
-"deepredtopaz": 0.05,
-"redmarquise": 0.3,
-"redtopaz": 0.65
-}
-chestId = "1-2"
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
