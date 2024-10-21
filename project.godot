@@ -27,6 +27,7 @@ ItemRegister="*res://backend/item_register/item_register.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+window/vsync/vsync_mode=2
 
 [input]
 
@@ -91,5 +92,7 @@ interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method.mobile="forward_plus"
+renderer/rendering_method.web="forward_plus"
 textures/decals/filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
